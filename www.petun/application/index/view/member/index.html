@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>会员--{:sysconf('web_title')}</title>
+		<meta name="keywords" content="{:sysconf('web_keys')}" />
+		<meta name="description" content="{:sysconf('web_desc')}" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="__STATIC__/index/css/main.9cd1cb456dc1b2580fab.css">
+		<link rel="stylesheet" type="text/css" href="__STATIC__/index/css/checkout.98b4922f686cba768763.css">
+		<style>
+			.huiyuan {
+				font-size: 20px;
+				color: #333;
+			}
+			
+			.con {
+				width: 1000px;
+				margin: 0 auto;
+				margin-top: 100px;
+			}
+			
+			.con img {
+				border-radius: 50px;
+				width: 80px;
+				height: 80px;
+			}
+			
+			.img {
+				float: left;
+				width: 9%;
+			}
+			
+			.ncdiv {
+				float: left;
+				width: 40%;
+			}
+			
+			.ncvip {
+				overflow: hidden;
+				line-height: 50px;
+			}
+			
+			.zhuangtai {
+				float: left;
+				width: 50%;
+			}
+			
+			.ncvip span {
+				float: left;
+				font-weight: 900;
+				margin-right: 20px;
+			}
+			
+			.ncvip div {
+				float: left;
+			}
+			
+			.zhuangtai li {
+				float: left;
+				list-style: none;
+				border: 2px solid #26ADED;
+				border-radius: 10px;
+				position: relative;
+				padding: 20px;
+				color: #26ADED;
+				margin-right: 8%;
+				width: 25%;
+				height: 70px;
+			}
+			
+			.zcnum {
+				width: 50px;
+				height: 50px;
+				border-radius: 40px;
+				border: 1px solid #ddd;
+				color: #fff;
+				text-align: center;
+				line-height: 50px;
+				position: absolute;
+				top: -32px;
+				z-index: 3;
+				background: linear-gradient(to right, #A86BFF, #26ADED);
+				left: 31%;
+			}
+			
+			.vip {
+				background-color: #26ADED;
+				border-radius: 10px;
+				width: 100px;
+				color: #fff;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+				margin-top: 10px;
+			}
+			
+			.zhuangtai li span {
+				top: 30px;
+				position: absolute;
+				left: 28%;
+			}
+			
+			thead tr td {
+				width: 978px;
+			}
+			
+			thead tr td {
+				background-color: #F5F5F5;
+				color: #B0ABB0;
+				padding-left: 20px;
+				font-size: 14px;
+			}
+			
+			thead tr td span {
+				color: #333;
+			}
+			
+			tbody tr td.image {
+				width: 10% !important;
+			}
+			
+			tbody tr td.description {
+				width: 50% !important;
+			}
+			
+			.wxzf {
+				width: 25%;
+				font-size: 16px;
+				border-left: 1px solid #ddd;
+				text-align: center;
+				padding-top: 20px !important;
+			}
+			
+			.ywxzf {
+				width: 25%;
+				font-size: 16px;
+				border-left: 1px solid #ddd;
+				text-align: center;
+				padding-top: 20px !important;
+			}
+			
+			.wxzf,
+			.ywxzf p {
+				line-height: 20px;
+			}
+			
+			.zjpjwxzf {
+				font-size: 18px;
+			}
+			
+			@media (max-width: 768px) {
+				.ncdiv {
+					width: 90% !important;
+				}
+				.zhuangtai {
+					width: 100% !important;
+					margin: 10px;
+					padding-top: 20px;
+				}
+				.zhuangtai li {
+					width: 10%;
+					font-size: 16px;
+					margin-right: 2%;
+					left: 1%;
+				}
+				.zcnum {
+					left: 28%;
+				}
+				#checkout-cart {
+					width: 37% !important;
+				}
+				@media (max-width:650px) {
+					.cw-logo img{margin-left: -14% !important;}
+				}
+				@media (max-width:320px) {
+					
+					#checkout-cart {
+						width: 32% !important;
+					}
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		{include file="public/header" /}
+		<div class="con">
+			<div class="huiyuan">
+				<div class="img"><img src="__STATIC__/index/img/cat.jpg" /></div>
+				<div class="ncdiv">
+					<div class="ncvip"><span>昵称</span>
+						<div class="vip">{$Think.session.member.nickname}</div>
+					</div>
+					<div>上次登录时间:2018-11-03</div>
+				</div>
+				<div class="zhuangtai">
+					<li>
+						<div class="zcnum">{$pending_payment|default=0}</div>
+						<span>待付款</span>
+					</li>
+					<li>
+						<div class="zcnum">{$pending_delivery|default=0}</div>
+						<span>待发货</span>
+					</li>
+					<li>
+						<div class="zcnum">{$goods_to_be_received|default=0}</div>
+						<span>待收货</span>
+					</li>
+				</div>
+			</div>
+			<div id="checkout-cart" style="float: left !important;width: 100%;margin-top: 40px;">
+				<div class="include">
+					<h2 style="margin-top: 10px;font-size: 18px;">最近30天订单</h2> {volist name="order" id="o"}
+					<div class="section">
+						<div class="items">
+							<table>
+								<thead>
+									<tr>
+										<td colspan="20">{$o.create_at}&nbsp;&nbsp;&nbsp;订单编号:<span>{$o.order_no}</span></td>
+									</tr>
+								</thead>
+								<tbody>
+
+									<tr>
+										{volist name="o['list']" id="ol"}
+										<td class="image">
+											<img src="{$ol.goods_logo}" alt="Blue Buffalo Life Protection Formula Adult Chicken &amp; Brown Rice Recipe Dry Dog Food, 30-lb bag" width="55" height="55" />
+										</td>
+										<td class="description">
+											<span class="name">{$ol.goods_title}</span>
+											<div style="overflow: hidden;">
+												<div class="qty">
+													数量: <span>{$ol.num}</span>
+												</div>
+												<span class="price">&yen;{$ol.selling_price}</span>
+											</div>
+
+											<!--<div class="qty">已完成</div>-->
+
+											<div class="clear"></div>
+											{if ($o['status']>=5) and ($o['status']
+											<6)} {eq name="ol.is_comment" value="1" } <a style="color:white;background:aqua;border-color: aqua;border-radius: 5px;cursor: pointer;display: block;width: 60px;height: 30px;line-height: 30px;text-align: center" href="/comment/{$ol.gid}/{$ol.id}"><strong>评论</strong></a>
+												{else /}
+												<span class="qty">已评价</span> {/eq} {else /}
+												<span class="qty" style="color: red">未评价</span> {/if}
+
+										</td>
+									</tr>
+									{/volist}
+									<tr>
+										<td colspan="20" class="zjpjwxzf">总价:{$o.pay_price}元&nbsp;&nbsp;{eq name="o.pay_type" value="1"}微信支付{else /}支付宝{/eq}
+										</td>
+									</tr>
+
+								</tbody>
+							</table>
+						</div>
+
+					</div>
+					{/volist}
+				</div>
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<script>
+			document.body.style.overflowX = 'hidden';
+		</script>
+	</body>
+
+</html>

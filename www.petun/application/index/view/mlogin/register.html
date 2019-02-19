@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" class="cw-desktop">
+
+<head>
+
+    <title>注册--{:sysconf('web_title')}</title>
+    <meta name="apple-mobile-web-app-title" content="Chewy.com">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords"
+          content="{:sysconf('web_keys')}"/>
+    <meta name="description"
+          content="{:sysconf('web_desc')}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/index.css">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/register.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="__STATIC__/layer/layer.js"></script>
+	<style>
+		@media screen and ( max-width: 650px ) {
+		.cw-logo img{margin-top: 0px;margin-right: 3px !important;}
+		}
+	</style>
+</head>
+
+<body class="">
+
+<div id="container">
+    <header class="header-minimal">
+        <div class="fixed-container">
+            <div class="container">
+                <a href="/" class="cw-logo">
+                    <img src="{:sysconf('browser_logo')}" style="width: 10%;height: 10%;float: left;margin-right: 20px;" alt=""/>
+                </a>
+                <p class="secure-process">安全</p>
+                <ul class="checkout-nav js-dropdown">
+                    <li class="checkout-chat">
+                        <a href="#" class="checkout-chat-dd">问题吗?24/7的帮助</strong>
+                        </a>
+                        <div class="cw-drop cw-drop-help">
+                            <div class="cw-help-top">
+                                <p>从我们的专家那里得到24/7的帮助<span>1-800-672-4399</span></p>
+                            </div>
+                            <div class="cw-help-mid">
+
+                                <div id="chewyChatLinkContainer--header" class="js-chewyChatLinkContainer">
+                                    <div id="chewyChatLink--header" class="js-chewyChatLink">
+                                        <div id="chewyChatLinkInfo--header" class="js-chewyChatLinkInfo">
+                                            <div class="livechat cw-help-mid__livechat"><span>聊天</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-button">
+                        <a href="/">继续购物</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div id="wrap">
+        <div id="bd" class="">
+            <div id="content">
+                <div class="form-fields-section">
+
+                    <h1>创建一个帐户</h1>
+
+                    <div class="registration">
+                        <div class="bg-form">
+
+                            <h3>请输入您的信息</h3>
+
+                            <form method="post" action="/app/register" id="registration-form">
+                                <fieldset>
+                                    <ul>
+                                        <li class="field">
+                                            <label for="fullName">姓名</label>
+                                            <div class="field__wrapper">
+                                                <input size="40" maxlength="35" name="fullName" id="fullName"
+                                                       type="text" class="field__input field__input--name"/></div>
+                                        </li>
+                                        <li class="field">
+                                            <label for="email">电子邮件地址</label>
+                                            <div class="field__wrapper">
+                                                <input size="40" maxlength="50" name="email" id="email" type="email"
+                                                       class="field__input field__input--email"/></div>
+                                        </li>
+                                        <li class="field">
+                                            <label for="password">密码</label>
+                                            <div class="field__wrapper">
+                                                <input size="25" maxlength="35" name="password" id="password"
+                                                       type="password" class="field__input field__input--pw"/></div>
+                                        </li>
+                                        <li class="field">
+                                            <label for="passwordVerify">确认密码</label>
+                                            <div class="field__wrapper">
+                                                <input size="25" maxlength="35" name="passwordVerify"
+                                                       id="passwordVerify" type="password"
+                                                       class="field__input field__input--pw"/></div>
+                                        </li>
+                                    </ul>
+
+                                    <input data-sitekey="6LcElkEUAAAAAEc_5klk0x9dHfBV_HdamyfUjD_i" name="create"
+                                           type="button"
+                                           class="g-recaptcha cw-btn cw-btn--action cw-btn--full js-create-account"
+                                           value="创建账户"/>
+                                    <div class="separator">
+                                        <hr>
+                                        <span>已经有账户?</span>
+                                    </div>
+                                    <a href="/login" class="cw-btn cw-btn--default cw-btn--full js-sign-in">登录</a>
+
+                                </fieldset>
+
+                                <input type="hidden" name="_eventName" value="create"/>
+                                <input type="hidden" name="forceChallenge" value="false"/>
+                                <input name="url" id="url" type="hidden" value=""/>
+                                <div style="display: none;"><input type="hidden" name="_sourcePage"
+                                                                   value="3iNYXIPP0dvE9vzS53Ea0AHQ4aaFJ8ueCCVpzFVMIGPQeYCaAodMOr1DT8rbjobih_C-99mPDVccD78DqDNU9NSTc6znyMe1SRFQsZfOxVMqxJ1ti5eZIg=="/><input
+                                        type="hidden" name="__fp"
+                                        value="8ZqnclWNiPsA36hYKS6PlSzQ4cdwUf3AR_JW2sP6E9MljX_ShIFjCusHSvBByms8"/></div>
+                            </form>
+                            <div class="register-details">
+                                <p>创建帐户是快速、简单和免费的。您将能够管理您的汽车，跟踪您的订单，写评论，以及更多!</p>
+                                <ul>
+                                    <li>跟踪你的订单</li>
+                                    <li>管理自动化船</li>
+                                    <li>查看您的订单历史</li>
+                                    <li>评估和评审产品</li>
+                                    <li>获得独家优惠，折扣，和更多!</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-minimal">
+        <div class="container">
+            <p>问题吗?我们一天24小时都在这里:1-800-672-4399</p>
+            <ul>
+                <li>&copy; 2018 Chewy, Inc.</li>
+                <li>
+                    <a href="/app/content/terms" target="_blank">使用条款</a>
+                </li>
+                <li>
+                    <a href="/app/content/privacy" target="_blank">隐私政策</a>
+                </li>
+                <li id="GTS_CONTAINER" class="gts-badge"></li>
+            </ul>
+        </div>
+    </footer>
+</div>
+
+</body>
+
+</html>
+<script>
+    $(function () {
+        $(".js-create-account").click(function () {
+            $.post("/register_do", {
+                "nickname": $("#fullName").val(),
+                "email": $("#email").val(),
+                "password": $("#password").val(),
+                "repass":$("#passwordVerify").val()
+            }, function (data) {
+                var t = JSON.parse(data);
+                console.log(t);
+                switch (t.code) {
+                    case 1:
+                        layer.msg(t.msg);
+                        setTimeout(function () {
+                            window.location.href = "/login";
+                        }, 666);
+                        break;
+                    case 2:
+                        layer.msg(t.msg);
+                        break;
+                    case 3:
+                        layer.msg(t.msg);
+                        break;
+                    case 4:
+                        layer.msg(t.msg);
+                        break;
+                    default:
+                        layer.msg(t.msg);
+
+                }
+            });
+        });
+    });
+</script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script>
+        document.body.style.overflowX = 'hidden';
+    </script>

@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en" class="cw-desktop">
+
+<head>
+
+    <title>一键结算--{:sysconf('web_title')}</title>
+    <meta name="apple-mobile-web-app-title" content="Chewy.com">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords"
+          content="{:sysconf('web_keys')}"/>
+    <meta name="description"
+          content="{:sysconf('web_desc')}"/>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/index.css">
+    <style>
+    	#content{float: none !important;margin: 0 auto !important;width: 68% !important;}
+    	@media (max-width:768px) {
+    		#content{margin: 0;width: 100% !important;}
+    		#checkout-cart ul.totals li .amt{width: 9% !important;}
+    		#checkout-cart ul.totals li .label{width: 91% !important;}
+    	}
+    </style>
+    <script type="text/javascript">
+        !function (e) {
+            function t(t) {
+                for (var n, u, c = t[0], i = t[1], f = t[2], l = 0, p = []; l < c.length; l++) u = c[l], o[u] && p.push(o[u][0]), o[u] = 0;
+                for (n in i) Object.prototype.hasOwnProperty.call(i, n) && (e[n] = i[n]);
+                for (d && d(t); p.length;) p.shift()();
+                return a.push.apply(a, f || []), r()
+            }
+
+            function r() {
+                for (var e, t = 0; t < a.length; t++) {
+                    for (var r = a[t], n = !0, c = 1; c < r.length; c++) {
+                        var i = r[c];
+                        0 !== o[i] && (n = !1)
+                    }
+                    n && (a.splice(t--, 1), e = u(u.s = r[0]))
+                }
+                return e
+            }
+
+            var n = {},
+                o = {
+                    0: 0
+                },
+                a = [];
+
+            function u(t) {
+                if (n[t]) return n[t].exports;
+                var r = n[t] = {
+                    i: t,
+                    l: !1,
+                    exports: {}
+                };
+                return e[t].call(r.exports, r, r.exports, u), r.l = !0, r.exports
+            }
+
+            u.e = function (e) {
+                var t = [],
+                    r = o[e];
+                if (0 !== r)
+                    if (r) t.push(r[2]);
+                    else {
+                        var n = new Promise(function (t, n) {
+                            r = o[e] = [t, n]
+                        });
+                        t.push(r[2] = n);
+                        var a, c = document.getElementsByTagName("head")[0],
+                            i = document.createElement("script");
+                        i.charset = "utf-8", i.timeout = 120, u.nc && i.setAttribute("nonce", u.nc), i.src = function (e) {
+                            return u.p + "" + ({
+                                1: "vendors"
+                            }[e] || e) + "." + {
+                                1: "9da78577d97bd0028f32",
+                                2: "190f4a96f38469bfa72a",
+                                72: "029d424210bdc70cbe4a",
+                                73: "0a214cd361cdb4adce8c",
+                                74: "acbbbdd7a9a049904083",
+                                75: "8328e1c28ec22b38fef1",
+                                76: "dced0d9197ad698c2561",
+                                77: "cd53b2497273d09b1b2c"
+                            }[e] + ".packaged.js"
+                        }(e), a = function (t) {
+                            i.onerror = i.onload = null, clearTimeout(f);
+                            var r = o[e];
+                            if (0 !== r) {
+                                if (r) {
+                                    var n = t && ("load" === t.type ? "missing" : t.type),
+                                        a = t && t.target && t.target.src,
+                                        u = new Error("Loading chunk " + e + " failed.\n(" + n + ": " + a + ")");
+                                    u.type = n, u.request = a, r[1](u)
+                                }
+                                o[e] = void 0
+                            }
+                        };
+                        var f = setTimeout(function () {
+                            a({
+                                type: "timeout",
+                                target: i
+                            })
+                        }, 12e4);
+                        i.onerror = i.onload = a, c.appendChild(i)
+                    }
+                return Promise.all(t)
+            }, u.m = e, u.c = n, u.d = function (e, t, r) {
+                u.o(e, t) || Object.defineProperty(e, t, {
+                    enumerable: !0,
+                    get: r
+                })
+            }, u.r = function (e) {
+                "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, {
+                    value: "Module"
+                }), Object.defineProperty(e, "__esModule", {
+                    value: !0
+                })
+            }, u.t = function (e, t) {
+                if (1 & t && (e = u(e)), 8 & t) return e;
+                if (4 & t && "object" == typeof e && e && e.__esModule) return e;
+                var r = Object.create(null);
+                if (u.r(r), Object.defineProperty(r, "default", {
+                    enumerable: !0,
+                    value: e
+                }), 2 & t && "string" != typeof e)
+                    for (var n in e) u.d(r, n, function (t) {
+                        return e[t]
+                    }.bind(null, n));
+                return r
+            }, u.n = function (e) {
+                var t = e && e.__esModule ? function () {
+                    return e.default
+                } : function () {
+                    return e
+                };
+                return u.d(t, "a", t), t
+            }, u.o = function (e, t) {
+                return Object.prototype.hasOwnProperty.call(e, t)
+            }, u.p = "", u.oe = function (e) {
+                throw console.error(e), e
+            }, Object.defineProperty(u, "p", {
+                get: function () {
+                    return "/assets/js/"
+                }
+            });
+            var c = window.webpackJsonp = window.webpackJsonp || [],
+                i = c.push.bind(c);
+            c.push = t, c = c.slice();
+            for (var f = 0; f < c.length; f++) t(c[f]);
+            var d = i;
+            r()
+        }([]);
+        //# sourceMappingURL=runtime.6830762ff91703dbda55.packaged.js.map
+    </script>
+
+    <meta property="og:image" content="https://www.chewy.com/assets/img/logo/chewy-opengraph.20170505.png"
+          xmlns:og="http://opengraphprotocol.org/schema/"/>
+    <meta property="og:description"
+          content="Delivering pet happiness by conveniently shipping 1000+ brands of pet food and stuff (for free!) while ensuring at-risk animals' lives are improved across the planet. 1-800-672-4399"
+          xmlns:og="http://opengraphprotocol.org/schema/"/>
+    <script type="application/ld+json">
+			{
+				"@context": "http://schema.org",
+				"@type": "Organization",
+				"name": "Chewy",
+				"url": "http://www.chewy.com",
+				"sameAs": [
+					"http://www.facebook.com/chewy",
+					"https://www.youtube.com/channel/UCpWl2nwLDQQI4TTa1kJgxrg",
+					"http://instagram.com/chewy",
+					"http://twitter.com/chewy",
+					"https://www.linkedin.com/company/2433416",
+					"http://pinterest.com/chewy"
+				],
+				"contactPoint": [{
+					"@type": "ContactPoint",
+					"telephone": "+1-800-672-4399",
+					"contactType": "customer service"
+				}]
+			}
+
+    </script>
+
+    <script>
+        window.chewyConf = {
+            // App Context //
+
+            storeId: 10,
+            currency: "USD",
+
+            version: "hotfix-3.0-919.1-2",
+            environment: "production",
+            production: true,
+
+            sentryPublicDsn: "https://9ba125d92cbf4e6d92f28364e8a4aae8@sentry.io/125686",
+
+            // Request Context //
+
+            cid: "45037531",
+            uid: "45037531",
+            csr: false,
+            intranetUser: false,
+            priviledged: false,
+            registeredUser: true,
+            genericUser: false,
+            authenticated: true,
+            personalizationId: "Jn63ZAIUQemyAUXTWPRyVg",
+
+            uriValuesJson: {
+                "scheme": "https",
+                "serverName": "www.chewy.com",
+                "serverPort": 443,
+                "defaultPort": true,
+                "notDefaultPort": false,
+                "searchEngine": false
+            },
+
+            requestId: "2bd9c300,03-5BDA9AD5-6EADA22",
+            isBot: false,
+
+            viewType: "desktop",
+            mobileView: false,
+            desktopView: true,
+            pageType: "checkout-spc",
+
+            toggles: {
+                tokenizationEnabled: true,
+            },
+
+            optimizely: {
+                dataFile: {
+                    "version": "4",
+                    "rollouts": [{
+                        "experiments": [{
+                            "status": "Not started",
+                            "key": "11925000006",
+                            "layerId": "11917520009",
+                            "trafficAllocation": [{
+                                "entityId": "11936290009",
+                                "endOfRange": 0
+                            }],
+                            "audienceIds": [],
+                            "variations": [{
+                                "variables": [],
+                                "id": "11936290009",
+                                "key": "11936290009",
+                                "featureEnabled": false
+                            }],
+                            "forcedVariations": {},
+                            "id": "11925000006"
+                        }],
+                        "id": "11917520009"
+                    }],
+                    "anonymizeIP": true,
+                    "projectId": "10594014474",
+                    "variables": [],
+                    "featureFlags": [{
+                        "experimentIds": [],
+                        "rolloutId": "11917520009",
+                        "variables": [],
+                        "id": "11924940009",
+                        "key": "PW_STRENGTH_METER"
+                    }],
+                    "experiments": [{
+                        "status": "Running",
+                        "key": "BRANDS_MENU",
+                        "layerId": "10652610846",
+                        "trafficAllocation": [{
+                            "entityId": "10655171152",
+                            "endOfRange": 5000
+                        }, {
+                            "entityId": "10652161690",
+                            "endOfRange": 9000
+                        }, {
+                            "entityId": "10652161690",
+                            "endOfRange": 10000
+                        }],
+                        "audienceIds": ["10682700382"],
+                        "variations": [{
+                            "variables": [],
+                            "id": "10652161690",
+                            "key": "CONTROL"
+                        }, {
+                            "variables": [],
+                            "id": "10655171152",
+                            "key": "NAV_TO_PAGE"
+                        }],
+                        "forcedVariations": {
+                            "8sSbAqHLSJKCraZK0b18xg": "CONTROL",
+                            "TkQQWBq_Rd2oGZfRMBsFvg": "CONTROL",
+                            "C3VVR35MROKi3GvfDXyFsg": "NAV_TO_PAGE",
+                            "DNz_sVLuSnq7I6A9rsqLsQ": "NAV_TO_PAGE",
+                            "y4TUBI5nReSlFBO3vxV2rQ": "CONTROL",
+                            "3gTVusZMQTu0AV-lWu6IDw": "NAV_TO_PAGE",
+                            "hbHkVy_ARlmZIgzBSezJGQ": "NAV_TO_PAGE"
+                        },
+                        "id": "10644940971"
+                    }, {
+                        "status": "Running",
+                        "key": "2018_10_SEARCH_AUTOCOMPLETE",
+                        "layerId": "11665520168",
+                        "trafficAllocation": [{
+                            "entityId": "11676810248",
+                            "endOfRange": 5000
+                        }, {
+                            "entityId": "11678740229",
+                            "endOfRange": 10000
+                        }],
+                        "audienceIds": ["10682700382"],
+                        "variations": [{
+                            "variables": [],
+                            "id": "11676810248",
+                            "key": "CONTROL"
+                        }, {
+                            "variables": [],
+                            "id": "11678740229",
+                            "key": "AUTOCOMPLETE"
+                        }],
+                        "forcedVariations": {
+                            "8sSbAqHLSJKCraZK0b18xg": "CONTROL",
+                            "my7qOgbMRzeko4MkAqhzMA": "AUTOCOMPLETE",
+                            "RSjIZy6LQmiLDNLGLTHZiA": "AUTOCOMPLETE",
+                            "C3VVR35MROKi3GvfDXyFsg": "AUTOCOMPLETE",
+                            "y4TUBI5nReSlFBO3vxV2rQ": "CONTROL",
+                            "3gTVusZMQTu0AV-lWu6IDw": "AUTOCOMPLETE",
+                            "nOhiz30RQaSLp0eE3F3nCQ": "AUTOCOMPLETE",
+                            "6gxz4CIpSyyvWZ_j9_psCQ": "AUTOCOMPLETE"
+                        },
+                        "id": "11675100114"
+                    }],
+                    "audiences": [{
+                        "id": "10682700382",
+                        "conditions": "[\"and\", [\"or\", [\"or\", {\"name\": \"isVisitor\", \"type\": \"custom_attribute\", \"value\": \"true\"}]]]",
+                        "name": "Visitor"
+                    }],
+                    "groups": [],
+                    "attributes": [{
+                        "id": "10673990693",
+                        "key": "IS_CSR"
+                    }, {
+                        "id": "10675862039",
+                        "key": "isIntranetUser"
+                    }, {
+                        "id": "10676860589",
+                        "key": "VIEW_TYPE"
+                    }, {
+                        "id": "10677651877",
+                        "key": "isCsr"
+                    }, {
+                        "id": "10677781401",
+                        "key": "PAGE_TYPE"
+                    }, {
+                        "id": "10678531566",
+                        "key": "IS_BOT"
+                    }, {
+                        "id": "10680862308",
+                        "key": "viewType"
+                    }, {
+                        "id": "10682461400",
+                        "key": "isVisitor"
+                    }, {
+                        "id": "10683720902",
+                        "key": "IS_INTRANET"
+                    }, {
+                        "id": "10684630675",
+                        "key": "isBot"
+                    }, {
+                        "id": "11361281765",
+                        "key": "hasPurchased"
+                    }, {
+                        "id": "11370712958",
+                        "key": "registeredUser"
+                    }],
+                    "botFiltering": true,
+                    "accountId": "10555604116",
+                    "events": [{
+                        "experimentIds": ["10644940971", "11675100114"],
+                        "id": "10649591699",
+                        "key": "purchase"
+                    }, {
+                        "experimentIds": [],
+                        "id": "10660490302",
+                        "key": "deals_click"
+                    }, {
+                        "experimentIds": [],
+                        "id": "10685291504",
+                        "key": "pdp_from_deals"
+                    }, {
+                        "experimentIds": [],
+                        "id": "10685571084",
+                        "key": "acquisition"
+                    }, {
+                        "experimentIds": ["10644940971", "11675100114"],
+                        "id": "11039333437",
+                        "key": "product_view"
+                    }, {
+                        "experimentIds": ["10644940971"],
+                        "id": "11067134035",
+                        "key": "nav_brand_open"
+                    }, {
+                        "experimentIds": ["10644940971", "11675100114"],
+                        "id": "11074343447",
+                        "key": "add_to_cart"
+                    }, {
+                        "experimentIds": [],
+                        "id": "11546935483",
+                        "key": "autoship_purchase"
+                    }, {
+                        "experimentIds": ["11675100114"],
+                        "id": "11787892242",
+                        "key": "autocomplete_search"
+                    }, {
+                        "experimentIds": ["11675100114"],
+                        "id": "11808422425",
+                        "key": "user_search"
+                    }],
+                    "revision": "302"
+                }
+            },
+            // TO DO : remove this, once changes are available to have user as part of the application scope. //
+            hasPurchased: "false"
+        }
+    </script>
+    <script>
+        window.chewy = window.chewy || {};
+        window.chewy.store = window.chewy.store || {};
+
+        window.chewy.store.petTypes = [{
+            "id": 2,
+            "name": "Cat"
+        }, {
+            "id": 1,
+            "name": "Dog"
+        }];
+
+        window.chewy.store.petProfiles = [];
+
+        window.chewy.store.vetProfiles = [];
+    </script>
+
+    <script>
+        var visitType = 'landing';
+
+        function shouldPassNaniganInfo(trueCb, falseCb) {
+            window.criteo_call ? trueCb() : falseCb();
+        }
+
+        function naniganSuccess() {
+            window.criteo_call();
+        }
+
+        window.chewy = window.chewy || {};
+        window.chewy.retry = function (functionToRetry, successCb, failureCb, maxTries, interval) {
+            // Wrap original failure method in a function that keeps count
+            function OnFailure() {
+                if (--maxTries > 0) {
+                    setTimeout(function () {
+                        return functionToRetry(successCb, OnFailure);
+                    }, interval);
+                } else {
+                    if (typeof failureCb === "function") {
+                        failureCb();
+                    }
+                }
+            };
+            // Make the first call after waiting duration of interval
+            setTimeout(function () {
+                // Pass wrapped method instead of original failure callback
+                return functionToRetry(successCb, OnFailure);
+            }, interval);
+        };
+
+        window.NaN_api = [
+            [631990, '45037531'],
+            ['visit', visitType, 0]
+        ];
+        window.NaN_api.onsegment = function () {
+            window.chewy.retry(shouldPassNaniganInfo, naniganSuccess, null, 10, 500);
+        };
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.src = '//cdn.nanigans.com/NaN_tracker.js';
+            var h = document.getElementsByTagName('head')[0];
+            h.appendChild(s);
+        })();
+    </script>
+    <script>
+        window.chewy = window.chewy || {};
+        window.chewy.autoshipFirstTimeDiscountPercent = 30;
+        window.chewy.autoshipFirstTimeMaxSavingsAmount = 20;
+    </script>
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+        window.chewy = window.chewy || {};
+        window.dataLayer = window.dataLayer || [];
+        //JS var only used by GA
+        window.chewy.pageType = 'checkout-spc';
+        window.chewy.userId = '45037531';
+        window.chewy.environment = 'production'
+    </script>
+
+    <script src="/assets/js/common-head-desktop.ce89fa50a96ea1c92e7d.packaged.js"></script>
+
+    <script async defer
+            src="https://safetechpageencryption.chasepaymentech.com/pie/v1/64100000000140/getkey.js"></script>
+    <script async defer src="/assets/js/vendor/encryption.1.0.js"></script>
+
+    <script>
+        var checkoutVM = JSON.parse("{\x22addressId\x22:0,\x22addresses\x22:[],\x22newAddress\x22:{},\x22cardId\x22:0,\x22cards\x22:[],\x22newCard\x22:{\x22address\x22:{}},\x22useShippingAddress\x22:true,\x22createSubscription\x22:false,\x22subscriptionFrequency\x22:4}");
+        var errors = JSON.parse("{\x22errors\x22:false,\x22globalErrors\x22:[],\x22fieldErrors\x22:{}}");
+    </script>
+    <script src="//cdn.ravenjs.com/3.17.0/vue/raven.min.js" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        var ravenOptions = {
+            ignoreErrors: [
+                //
+                'top.GLOBALS',
+                //
+                'originalCreateNotification',
+                'canvas.contentDocument',
+                'MyApp_RemoveAllHighlights',
+                'http://tt.epicplay.com',
+                'Can\'t find variable: ZiteReader',
+                'jigsaw is not defined',
+                'ComboSearch is not defined',
+                'http://loading.retry.widdit.com/',
+                'atomicFindClose',
+                //
+                'fb_xd_fragment',
+                //
+                //
+                //
+                'bmi_SafeAddOnload',
+                'EBCallBackMessageReceived',
+                //
+                'conduitPage'
+            ],
+            ignoreUrls: [
+                //
+                /graph\.facebook\.com/i,
+                //
+                /connect\.facebook\.net\/en_US\/all\.js/i,
+                //
+                /eatdifferent\.com\.woopra-ns\.com/i,
+                /static\.woopra\.com\/js\/woopra\.js/i,
+                //
+                /extensions\//i,
+                /^chrome:\/\//i,
+                //
+                /127\.0\.0\.1:4001\/isrunning/i, //
+                /webappstoolbarba\.texthelp\.com\//i,
+                /metrics\.itunes\.apple\.com\.edgesuite\.net\//i,
+                //
+                /kaspersky-labs\.com/i,
+                //
+                /sp\.analytics\.yahoo\.com/i,
+                //
+                /^\/signals\/config/i,
+                /magiczoomplus\.js/i,
+                /magiczoomplus\.5\.2\.4\.js/i
+            ],
+            shouldSendCallback: function (data) {
+
+                //
+                //
+                //
+                //
+                if (window.chewyConf && window.chewyConf.isBot) {
+                    return false;
+                }
+
+                //
+                //
+                if (/CriOS/i.test(navigator.userAgent) && data.exception && data.exception.values) {
+                    //
+                    for (var i = 0; i < data.exception.values.length; i++) {
+                        var e = data.exception.values[i];
+
+                        if (e.type === 'SecurityError' &&
+                            e.value.indexOf('Blocked a frame with origin') !== -1 &&
+                            e.value.indexOf('Protocols, domains, and ports must match.') !== -1) {
+                            return false;
+                        }
+                    }
+                }
+
+                //
+                //
+                if (window.location.search.indexOf("catchpoint=true") !== -1) {
+                    return false;
+                }
+
+                //TODO: filter out IE10 errors too.
+                var regexp = new RegExp('(\\s|^)ie-[89](\\s|$)');
+                //
+                if (document.body.className.match(regexp)) {
+                    return false;
+                }
+
+                return true;
+            },
+
+            //
+            sampleRate: 0.1,
+
+            serverName: 'iad1gsfw02.ecom.chewy.com',
+            release: 'hotfix-3.0-919.1-2',
+            environment: 'production',
+            tags: {
+                viewType: 'desktop',
+                pageType: 'checkout-spc'
+            },
+            extra: {
+                rid: '2bd9c300,03-5BDA9AD5-6EADA22',
+                cid: '45037531'
+            }
+        };
+
+        Raven.config('https://9ba125d92cbf4e6d92f28364e8a4aae8@sentry.io/125686', ravenOptions).install();
+        Raven.setUserContext({
+            id: '45037531'
+        });
+    </script>
+
+    <script src="/assets/js/main-utilities.2596c8569069d891ca11.packaged.js"></script>
+    <script src="/assets/js/d-main.37584e393bf9875fefbc.packaged.js"></script>
+
+    <script src="/assets/js/vendor/optimizely/optimizely.browser.umd.2.1.3.min.js"></script>
+    <script>
+        // optimizelyClient will be undefined if customer is running adblock extension
+        if (window.optimizelyClient) {
+
+            (function () {
+
+                //TODO: provide our own logger that hooks into Sentry
+                window.chewy.optimizelyClient = window.optimizelyClient.createInstance({
+                    datafile: window.chewyConf.optimizely.dataFile,
+                    logLevel: parseInt($.cookie('cw-optilog'), 10) || 4
+                });
+
+                var commonAttributes = {
+                    'isVisitor': (!window.chewyConf.isBot && !window.chewyConf.csr && !window.chewyConf.intranetUser).toString(),
+                    'viewType': chewyConf.viewType,
+                    'hasPurchased': chewyConf.hasPurchased.toString(),
+                    'registeredUser': chewyConf.registeredUser.toString()
+                };
+
+                var _mergedAttributes = function (attrs) {
+                    return $.extend({}, commonAttributes, attrs);
+                };
+
+                window.chewy.optimizelyClient.safeTrack = function (eventKey, attributes, eventTags) {
+                    return this.track(eventKey, window.chewyConf.personalizationId, _mergedAttributes(attributes), eventTags);
+                };
+
+                window.chewy.optimizelyClient.safeActivate = function (experimentKey, attributes) {
+                    var keyName = 'optimizelyVariant_' + experimentKey + '_' + window.chewyConf.personalizationId;
+                    var isStorageAvailable = window.chewy.storageAvailable();
+                    var variantEntry = isStorageAvailable ? JSON.parse(localStorage.getItem(keyName)) : null;
+                    if (!variantEntry) {
+
+                        var variantValue = this.activate(experimentKey, window.chewyConf.personalizationId, _mergedAttributes(attributes));
+
+                        variantEntry = JSON.stringify({
+                            value: variantValue,
+                            time: Date.now()
+                        });
+
+                        // TODO: SFW-6217 use callback instead to decouple
+                        if (variantValue != null && window.chewy && window.chewy.gaHelper) {
+                            window.chewy.gaHelper.pushExperiment(experimentKey, variantValue);
+                        }
+
+                        if (isStorageAvailable) localStorage.setItem(keyName, variantEntry);
+                        return variantValue;
+                    }
+                    return variantEntry.value;
+                };
+
+                window.chewy.optimizelyClient.getSafeVariation = function (experimentKey, attributes) {
+                    return this.getVariation(experimentKey, window.chewyConf.personalizationId, _mergedAttributes(attributes));
+                };
+            })();
+
+        }
+    </script>
+    <script type="text/javascript">
+        dataLayer.push({
+            'environment': 'production',
+            'viewType': 'desktop',
+            'app_version': 'hotfix-3.0-919.1-2',
+
+            'pageType': 'checkout-spc',
+
+            'ecomm_pagetype': 'cart',
+
+            'personalizationId': chewyConf.personalizationId,
+
+            'isBot': chewyConf.isBot,
+
+            'user_id': '45037531',
+            'user_logon_id': '2531397468@qq.com'
+
+            ,
+            'user_active_autoship': ''
+
+        });
+    </script>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/checkout.98b4922f686cba768763.css">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/account.7fbd0e4863cfd82e8041.css">
+    <script>
+        var checkoutPage = {
+            orderId: '132058207'
+        };
+
+        dataLayer.push({
+            event: 'facebookPixel',
+            eventCategory: 'facebookPixel',
+            facebook_pixel_event: 'InitiateCheckout',
+            facebook_pixel_data: {
+                value: '142.97',
+                currency: 'USD',
+                content_ids: '[46861,49066]',
+                content_type: 'product',
+                num_items: '3'
+            },
+            nonInteraction: true
+        });
+
+        dataLayer.push({
+            event: 'analyticsEvent',
+            eventAction: 'shipping-required',
+            eventCategory: 'Checkout',
+            nonInteraction: true
+        });
+
+        dataLayer.push({
+            event: 'analyticsEvent',
+            eventAction: 'payment-required',
+            eventCategory: 'Checkout',
+            nonInteraction: true
+        });
+
+        if (window.NaN_api) {
+            window.NaN_api.push(
+                ['user',
+                    'initiate_checkout', [9398, 4899],
+                    {
+                        'sku': ['46861', '49066'],
+                        'qty': [2, 1],
+                        'unique': 'CH_132058207'
+                    }
+                ]);
+        }
+    </script>
+    <script>
+        window.dataLayer.push({
+            "ecomm_prodid": ["46861", "49066"],
+            "ecomm_totalvalue": 142.97,
+            "ecomm_pagetype": "cart"
+        });
+    </script>
+</head>
+
+<!--[if IE 8 ]>
+<body class="ie ie-8 "> <![endif]-->
+<!--[if IE 9 ]>
+<body class="ie ie-9 "> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+
+<body class="">
+{include file="public/header" /}
+<!--<![endif]-->
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5X325N"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- Google Tag Manager -->
+<script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            "gtm.start": new Date().getTime(),
+            event: "gtm.js"
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src =
+            "https://www.googletagmanager.com/gtm.js?id=" +
+            i +
+            dl +
+            "";
+        f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-5X325N");
+</script>
+<!-- End Google Tag Manager -->
+<div id="container">
+
+    <div id="wrap">
+        <div id="bd" class="">
+            <div id="content">
+                <form method="post" action="/order_do" id="checkoutForm">
+                    <div id="checkout-container">
+                        <header class="header-checkout-heading">
+                            <h1>一步结账</h1>
+                            <p class="disclaimer-text">下订单即表示您同意
+                                <a href="/app/content/privacy" target="_blank">隐私政策</a>和
+                                <a href="/app/content/terms" target="_blank">使用条款</a>。</p>
+                        </header>
+                        <a href="/address_list"><div style="line-height: 30px;font-size: 18px;">去添加地址</div></a>
+                        <section class="account-section">
+                            <div class="">
+                                <section class="account-area account-area--ready">
+                                    {volist name="address" id="a"}
+                                    <a href=""
+                                       class="account-block account-block--address cw-card cw-card--action cw-card-hover">
+                                        <ul>
+                                            <li>
+                                                <div style="float: left;margin-right: 20px;">
+                                                    <input type="radio" name="shdd" value="{$a.id}" {eq name="i" value="1"}checked{/eq}/>
+                                                </div>
+                                                <div style="float: left;">
+                                                    <span class="name">{$a.username}</span><br>
+                                                    <span>{$a.province}{$a.city}{$a.area}{$a.address}</span><br>
+                                                    <span>电话: {$a.phone}</span><br>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </a>
+                                    {/volist}
+                                </section>
+                            </div>
+                        </section>
+                        <div id="checkout-cart">
+                            <div class="include">
+                                <h2>您的订单 <a href="/add_cart">编辑购物车</a></h2>
+                                <div class="section">
+
+                                    <div class="items">
+                                        {volist name="cart" id="c"}
+                                        <table>
+                                            <tr>
+                                                <td class="image">
+                                                    <img src="{$c.goods_logo}"
+                                                         alt="Blue Buffalo Life Protection Formula Adult Chicken &amp; Brown Rice Recipe Dry Dog Food, 30-lb bag"
+                                                         width="55" height="55"/>
+                                                </td>
+                                                <td class="description">
+															<span class="name">
+                                {$c.goods_title}</span>
+                                                    <div class="qty">
+                                                        数量: <span>{$c.num}</span>
+                                                    </div>
+
+                                                    <span class="price">
+                           {$c.selling_price}<input type="hidden" name="cid[]" value="{$c.id}"></span>
+
+                                                    <div class="clear"></div>
+
+                                                </td>
+                                            </tr>
+
+
+                                        </table>  {/volist}
+
+                                    </div>
+
+                                    <ul class="totals">
+                                        <li id="subtotal">
+                                            <span class="label">小计:</span>
+                                            <span class="amt">{$xiao}</span>
+                                        </li>
+                                        <li id="shiptotal">
+                                            <span class="label">统一运费:</span>
+                                            <span class="amt">
+                <span class="free">{gt name="freight" value="0"}{$freight}{else /}免费{/gt}</span>
+													</span>
+                                        </li>
+
+                                        <li id="total">
+                                            <span class="label">订单总额:</span>
+                                            <span class="amt js-orderTotal1">{$total}</span>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div style="font-size: 18px;color: #333;">
+                            <input type="radio" name="pay" value="1" checked/><span style="margin-right: 20px;">微信支付</span>
+                            <input type="radio" name="pay" value="2"/>支付宝支付
+                        </div>
+                        <div id="checkout-main">
+
+                            <fieldset class="submit">
+                                <p class="submit__label"><strong>订单总价: <span class="amt js-orderTotal2">{$total}</span></strong>
+                                </p>
+                                <input type="submit" name="bt" value="提交订单"
+                                       class="cw-btn cw-btn--action">
+                            </fieldset>
+
+                        </div>
+
+                    </div>
+
+                    <input name="orderId" type="hidden" value="132058207"/><input name="addressId" type="hidden"
+                                                                                  value=""/><input type="hidden"
+                                                                                                   name="creditCardId"
+                                                                                                   value=""/>
+
+                    <input type="hidden" name="_eventName"/>
+
+                    <div style="display: none;"><input type="hidden" name="_sourcePage"
+                                                       value="HHa9U7TIROQ8SIgGPIDsQBwpVUSVbQFFUMaO451mgpExN8goYZ2LlgiBotpasUDzYsSsc5mqBNBxdcGkCMnZLL8lJENwjf152-xpFGYYP7_6w99DJ_Rt8pqgbnpz6jUj"/><input
+                            type="hidden" name="__fp"
+                            value="O0l4ZgBtmJ2QcsLNWD4lqo0usEcUElXGvx71lu2uJE3it61aBeeiDvT2392NX2nd9EkWjQ8DAtFum1FpHRsFFSCLPYHEh2t4RVbubW_sCChWg-Y5qnFpAbHdlEncJnAux71fr6UPcIAze3PcQ6_JSbSyWCaoNAtLCfsSBbaf4shVSMLgMRlvBgpHR84YEX7lllOqwqrs_Z4eorl19qe6Jk6m6LpYoeIrCCP03E7m6bcIP-vhhBg7Wg=="/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="deferred-scripts">
+    <script src="/assets/js/vendor/jquery/jquery.bxslider.4.2.12-ch.2.3.min.js"></script>
+    <script src="/assets/js/cw-modal.afc08b95bac3ad5d0eba.packaged.js"></script>
+    <script src="/assets/js/vendors.9da78577d97bd0028f32.packaged.js"></script>
+    <script src="/assets/js/common-desktop.73609706d302f25b7833.packaged.js"></script>
+    <script src="/assets/js/vendor/bootstrap/bootstrap.popover.3.3.7.min.js"></script>
+    <script src="/assets/js/vendor/jquery/jquery.validate.1.15.0.min.js"></script>
+    <script src="/assets/js/cw-form.30a136904d1ce6e1cddc.packaged.js"></script>
+    <script src="/assets/js/checkout-validation.56d5ca190f0f0f0bd1f1.packaged.js"></script>
+    <script src="/assets/js/checkout-desktop.5f6dc44c5a5d94271680.packaged.js"></script>
+    <script defer src="/assets/js/tokenization-support.abd63cd9c095f153c8b4.packaged.js"></script>
+    <script type="text/javascript">
+        $.ajax({
+            url: 'https://chewy.widget.custhelp.com/euf/rightnow/RightNow.Client.js',
+            dataType: 'script',
+            cache: true, //default for script is false
+            success: function () {
+                if (typeof RightNow !== 'undefined') {
+
+                    $(function () {
+
+                        $('.js-chewyChatLinkContainer').each(function (index, el) {
+                            var rightNowChatContainer = $(el);
+
+                            RightNow.Client.Controller.addComponent({
+                                    chat_login_page: "/app/chat/chat_launch",
+                                    chat_login_page_height: 560,
+                                    chat_login_page_width: 500,
+                                    container_element_id: rightNowChatContainer.id,
+                                    link_element_id: rightNowChatContainer.find('.js-chewyChatLink').attr('id'),
+                                    info_element_id: rightNowChatContainer.find('.js-chewyChatLinkInfo').attr('id'),
+                                    instance_id: "sccl_" + index,
+                                    min_sessions_avail: 0,
+                                    wait_threshold: 1800,
+                                    enable_availability_check: true,
+                                    enable_polling: false,
+                                    open_in_new_window: true,
+                                    label_available_immediately_template: "",
+                                    label_available_with_wait_template: "",
+                                    label_default: "",
+                                    label_unavailable_busy_template: "",
+                                    label_unavailable_hours: "",
+                                    module: "ConditionalChatLink",
+                                    type: 7
+                                },
+                                "https://chewy.widget.custhelp.com/ci/ws/get"
+                            );
+                            RightNow.Client.Event.evt_widgetLoaded.subscribe(chatWidgetLoaded);
+
+                            function chatWidgetLoaded(type, args) {
+                                if (args[0].name === "ConditionalChatLink" && args[0].id === "sccl_" + index) {
+                                    var eventObj = new RightNow.Client.EventObject(args[0].name, args[0].id);
+                                    eventObj.data = {
+                                        customFields: {
+                                            // CustomField "139" for "referrer_url2"
+                                            "139": window.location.href
+                                        }
+
+                                        ,
+                                        commonFields: {
+                                            "contacts.first_name": "kingstar",
+                                            "contacts.email": "2531397468@qq.com"
+                                        }
+
+                                    };
+                                    RightNow.Client.Event.evt_updateWidgetData.fire(eventObj);
+                                }
+                            }
+                        });
+
+                    });
+
+                }
+            }
+        });
+    </script>
+    <!-- BEGIN: Google Trusted Stores -->
+    <script type="text/javascript">
+        // do not trigger GTS inclusion in non-prod environments to prevent 404
+        if (window.chewyConf.environment === 'production') {
+            var gts = gts || [];
+
+            gts.push(["id", "483342"]);
+            gts.push(["badge_position", "USER_DEFINED"]);
+            gts.push(["badge_container", "GTS_CONTAINER"]);
+            gts.push(["locale", "en_US"]);
+
+            gts.push(["google_base_country", "US"]);
+            gts.push(["google_base_language", "en"]);
+
+            (function () {
+                var gts = document.createElement("script");
+                gts.type = "text/javascript";
+                gts.async = true;
+                gts.src = "https://www.googlecommerce.com/trustedstores/api/js";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(gts, s);
+            })();
+        } else {
+            //the fallback is to preserve layout structure across prod/non-prod
+            $('#GTS_CONTAINER').append('<div id="___ratingbadge_0" style="text-indent: 0; margin: 0; padding: 0; background: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 165px; height: 54px;">');
+
+        }
+    </script>
+    <!-- END: Google Trusted Stores -->
+    <!--BEGIN Yahoo Dot -->
+    <script type="application/javascript">
+        (function (w, d, t, r, u) {
+            w[u] = w[u] || [];
+            w[u].push({
+                'projectId': '1000174518454',
+                'properties': {
+                    'pixelId': '437270'
+                }
+            });
+            var s = d.createElement(t);
+            s.src = r;
+            s.async = true;
+            s.onload = s.onreadystatechange = function () {
+                var y, rs = this.readyState,
+                    c = w[u];
+                if (rs && rs != "complete" && rs != "loaded") {
+                    return
+                }
+                try {
+                    y = YAHOO.ywa.I13N.fireBeacon;
+                    w[u] = [];
+                    w[u].push = function (p) {
+                        y([p])
+                    };
+                    y(c)
+                } catch (e) {
+                }
+            };
+            var scr = d.getElementsByTagName(t)[0],
+                par = scr.parentNode;
+            par.insertBefore(s, scr)
+        })(window, document, "script", "https://s.yimg.com/wi/ytc.js", "dotq");
+    </script>
+    <!--END Yahoo Dot -->
+</div>
+
+<script type="text/javascript">
+    var _cf = _cf || [];
+    _cf.push(['_setFsp', true]);
+    _cf.push(['_setBm', true]);
+</script>
+<script type="text/javascript" src="/_bm/abd-1-30"></script>
+</body>
+
+</html>

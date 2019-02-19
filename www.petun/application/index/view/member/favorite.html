@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" class="cw-desktop">
+
+<head>
+    <title>收藏--{:sysconf('web_title')}</title>
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="{:sysconf('web_keys')}"/>
+    <meta name="description" content="{:sysconf('web_desc')}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/main.9cd1cb456dc1b2580fab.css">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/account.7fbd0e4863cfd82e8041.css">
+</head>
+
+<body class="bd-account bd-sub-nav ">
+<div id="container" style="padding-top: 20px;">
+    <section class="account-section">
+        <div class="container">
+            <div id="breadcrumbs">
+                <a href="#">账户</a> &#8250;
+                <span>收藏列表</span>
+            </div>
+            <div class="account__buyitagain">
+                <header class="account__buyitagain__header">
+                    <h1>收藏列表</h1>
+                    <ul class="account__buyitagain__subnav">
+                        <li></li>
+                        <li>
+                            <a href="#"></a>
+                        </li>
+                    </ul>
+                </header>
+                <ul class="cw-card-list">
+                    {volist name="favorite" id="f"}
+                    <li class="buyitagain js-buyitagain ga-eec--32041 buyitagain--favorites">
+                        <div class="buyitagain__wrapper">
+                            <a href="#" class="buyitagain__remove cw-btn cw-btn--close js-buyitagain__remove"
+                               onclick="del(this)">Remove</a>
+                            <div class="buyitagain__content">
+                                <!--<div class="buyitagain__image">
+                                    <a href="" class="js-product-select product-image">
+                                        <img src=""
+                                             alt=""
+                                             width="103" height="103"/>
+                                    </a>
+                                </div>-->
+                                <div class="buyitagain__data">
+                                    <a href="" class="js-product-select">
+                                        {$f.goods_title}
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="buyitagain__actions">
+                                <button type="submit" id="cartbtn.0" data-itemid="32041"
+                                        class="cw-btn cw-btn--default cw-btn--sm js-buyitagain-add-cart">去购买
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    {/volist}
+                    <!--<li class="buyitagain js-buyitagain ga-eec&#45;&#45;32041 buyitagain&#45;&#45;favorites">-->
+                    <!--<div class="buyitagain__wrapper">-->
+                    <!--<a href="#" class="buyitagain__remove cw-btn cw-btn&#45;&#45;close js-buyitagain__remove" onclick="del(this)">Remove</a>-->
+                    <!--<div class="buyitagain__content">-->
+                    <!--<div class="buyitagain__image">-->
+                    <!--<a href="" class="js-product-select product-image">-->
+                    <!--<img src="//img.chewy.com/is/image/catalog/46861_MAIN._AC_SS135_V1529603537_.jpg" alt="Blue Buffalo  Life Protection Formula Adult Chicken &amp; Brown Rice Recipe Dry Dog Food, 30-lb bag" width="103" height="103" />-->
+                    <!--</a>-->
+                    <!--</div>-->
+                    <!--<div class="buyitagain__data">-->
+                    <!--<a href="" class="js-product-select">-->
+                    <!--蓝色水牛生活保护配方成人鸡肉和糙米食谱干狗粮，30磅袋-->
+                    <!--</a>-->
+                    <!--<div class="buyitagain__price">-->
+                    <!--46.99-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="buyitagain__actions">-->
+                    <!--<button type="submit" id="cartbtn.0" data-itemid="32041" class="cw-btn cw-btn&#45;&#45;default cw-btn&#45;&#45;sm js-buyitagain-add-cart">去购买</button>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</li>-->
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!--foot-->
+</div>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    function del(e) {
+        //alert($(e).text());
+        $(e).parent().parent().remove();
+    }
+</script>
+</body>
+
+</html>

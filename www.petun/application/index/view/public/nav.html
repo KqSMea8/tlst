@@ -1,0 +1,67 @@
+{php} $cate = db("store_art_cate")->where(["is_deleted" => 0, "pid" => 0])->select();
+foreach ($cate as $k => $v) {
+$second = db("store_art_cate")->where(["is_deleted" => 0, "pid" => $v['id']])->select();
+$cate[$k]['second'] = $second;
+}
+$cates=db("store_art_cate")->where(["is_deleted"=>0,"pid"=>0])->select();
+{/php}
+<div class="nav nav-15" data-num="13" id="Jnav_main_new">
+
+    <div class="nav-sub0" id="JnavSub_new2016">
+        <ul>
+            <li class="list specialOne" id="Jspecial13">
+                <div class="nav-inner clearfix">
+                    <a href="{:url('Encyclopedias/index')}" class="index" target="_blank">宠物</a>
+                    <span class="nav-channel">
+                         <a href="/">首页</a>
+                        {volist name="cates" id="c"}
+									<a href="{:url('Encyclopedias/index')}?zid={$c.id}">{$c.title}</a>
+                        {/volist}
+
+
+								</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="subNav">
+        <div class="classify" id="Jclassify">
+            <div class="classify-in" id="jclass">
+                {volist name="cate" id="c"}
+                <dl class="dDog" id="jsDl">
+                    <dt>
+                        <a href="{:url('Encyclopedias/index')}?zid={$c.id}">
+                            <img src="{$c.icon}" style="width: 46px;height: 30px;"/>
+                            <span class="type-tit">{$c.title}</span>
+                        </a>
+                    </dt>
+                    <dd>
+                        {volist name="c['second']" id="cs"} 
+                        <a target="_blank" href="{:url('Encyclopedias/index')}?eid={$cs.id}">{$cs.title}</a>
+                        {/volist}
+
+                    </dd>
+                </dl>
+                {/volist}
+            </div>
+            <div class="Jbtn" id="Jbtn">展开</div>
+            <div class="aJbtn" id="Jbtn" style="display: none;">收起</div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script>
+        $(".Jbtn").click(function() {
+            $(".classify-in dl").toggleClass("showJbtn");
+            $(".aJbtn").toggleClass("displayb");
+            $(".Jbtn").toggleClass("displayn");
+        });
+    </script>
+    <script>
+        $(".aJbtn").click(function() {
+            $(".classify-in dl").toggleClass("showJbtn");
+            $(".aJbtn").toggleClass("displayb");
+            $(".Jbtn").toggleClass("displayn");
+        });
+    </script>
+</div>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <title>百科详情--{:sysconf('web_title')}</title>
+    <meta name="description" content="{:sysconf('web_desc')}"/>
+    <meta name="keywords" content="{:sysconf('web_keys')}"/>
+    <meta name="Author" content="liyanlong_gz helanlan_gz">
+    <meta content="always" name="referrer">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="__STATIC__/index/css/art.css"/>
+    <style>
+        @media (max-width: 320px) {
+            .tab-nav .control .item {
+                padding: 0 3px;
+            }
+
+            .col-c .hasBorder {
+                width: 88% !important;
+            }
+
+            .clearfix img {
+                width: 92% !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .classify-in dd {
+                width: 85% !important;
+            }
+
+            .col-c .hasBorder {
+                width: 88% !important;
+            }
+
+            .hasBorder.hotPet {
+                width: 100% !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="doc">
+    {include file="public/nav" /}
+    <div class="" id="Jwrapper">
+        <div class="main">
+            <div class="col-ab picList" id="artMain">
+                <div class="guide-nav">
+                    <a href="" target="_blank">首页</a> >
+                    <a href="" target="_blank">详情</a>
+                </div>
+                <div class="artCon">
+                    <h1>
+                        {$one.atitle}
+                    </h1>
+                    <div class="artInfo">
+								<span class="pubTime">
+<!-- 2018-08-06 13:00
+-->
+{$one.add_time}
+</span>
+                    </div>
+                    <div class="artText" id="artText">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tbody>
+                            <tr>
+                                <td>
+                                    {$one.acontent|raw}
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="editor">
+                        <span>(责任编辑：liuxumin1)</span>
+                    </div>
+                    <!--高速版-->
+                    <!--PC和WAP自适应版-->
+                    <div id="SOHUCS" sid="{$one.id}"></div>
+                    <script type="text/javascript">
+                        (function () {
+                            var appid = 'cyu1PC4ar';
+                            var conf = 'prod_3bd329297c34b523d1cdfb896431b3ca';
+                            var width = window.innerWidth || document.documentElement.clientWidth;
+                            if (width < 960) {
+                                window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>');
+                            } else {
+                                var loadJs = function (d, a) {
+                                    var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+                                    var b = document.createElement("script");
+                                    b.setAttribute("type", "text/javascript");
+                                    b.setAttribute("charset", "UTF-8");
+                                    b.setAttribute("src", d);
+                                    if (typeof a === "function") {
+                                        if (window.attachEvent) {
+                                            b.onreadystatechange = function () {
+                                                var e = b.readyState;
+                                                if (e === "loaded" || e === "complete") {
+                                                    b.onreadystatechange = null;
+                                                    a()
+                                                }
+                                            }
+                                        } else {
+                                            b.onload = a
+                                        }
+                                    }
+                                    c.appendChild(b)
+                                };
+                                loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+                                    window.changyan.api.config({appid: appid, conf: conf})
+                                });
+                            }
+                        })(); </script>
+                </div>
+                <div class="keyMode">
+                    <p class="keyWord fs-14">
+                        <span style="">关键词：</span>
+                        {php}$keys=explode(",",$one['keys']);{/php}
+                        {volist name="keys" id="y"}
+                        <a href="{:url('Encyclopedias/index')}?key={$y}" target="_blank">{$y}</a>&nbsp;&nbsp;&nbsp;
+                        {/volist}
+                    </p>
+                    <!--百度分享 Star-->
+                    <div class="bshare-custom icon-medium-plus"><a title="分享到QQ空间" class="bshare-qzone"></a><a
+                            title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到人人网" class="bshare-renren"></a><a
+                            title="分享到腾讯微博" class="bshare-qqmb"></a><a title="分享到网易微博" class="bshare-neteasemb"></a><a
+                            title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a><span
+                            class="BSHARE_COUNT bshare-share-count">0</span></div>
+                    <script type="text/javascript" charset="utf-8"
+                            src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>
+                    <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+                </div>
+                <!-- SII配置 start -->
+
+                <!-- SII配置 End -->
+                <!-- 广告后出位置 -->
+                {include file="public/fine" /}<!-- 百科知识板块 -->
+                {include file="public/foot_pet" /}
+            </div>
+            <div class="col-c" id="JsideMain">
+                {include file="public/right" /}
+                <!--<div class="hasBorder specail mb-40">-->
+                <!--<div class="c-Title mb-20">-->
+                <!--<span>特别策划</span>-->
+                <!--</div>-->
+                <!--<div class="cont">-->
+                <!--<div class="specail-pic slide-pic slide-btn1" isTitle="true" auto="true">-->
+                <!--<div class="slide-wrap">-->
+                <!--<a href="javascript:" class="prev" target="_self"></a>-->
+                <!--<a href="javascript:" class="next" target="_self"></a>-->
+                <!--<ul class="pics">-->
+                <!--<li>-->
+                <!--<a href="//www1.pclady.com.cn/beauty/aixinxianvol09pc/index.html"-->
+                <!--target="_blank"><img src="__STATIC__/index/img/355-230_1.jpg" width="310"-->
+                <!--alt="秋季告别黑白灰，来做男神收割机"/></a>-->
+                <!--</li>-->
+                <!--<li>-->
+                <!--<a href="//beauty.pclady.com.cn/178/zt1781135.html" target="_blank"><img-->
+                <!--src="__STATIC__/index/img/355230_1_1.png" width="310"-->
+                <!--alt="妮维雅德国溯源之旅 寻找张钧甯与你我的蓝色铁罐记忆"/></a>-->
+                <!--</li>-->
+                <!--<li>-->
+                <!--<a href="//beauty.pclady.com.cn/177/zt1778176.html" target="_blank"><img-->
+                <!--src="__STATIC__/index/img/355230_2.png" width="310"-->
+                <!--alt="力士香氛洗手液定制专题：别再羡慕撩BOY发电机，手把手教你完美到指尖"/></a>-->
+                <!--</li>-->
+                <!--</ul>-->
+                <!--</div>-->
+                <!--<div class="circle-ctrl">-->
+                <!--<span class="circle-wrap">-->
+                <!--<i class="item"></i> <i class="item"></i> <i class="item"></i>-->
+                <!--</span>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="hasBorder freeTry mb-40">-->
+                <!--<div class="c-Title mb-20"><span>免费试用</span></div>-->
+                <!--<div class="freeTry-pic slide-pic slide-btn1" isTitle="true">-->
+
+                <!--<div class="slide-wrap">-->
+                <!--<div class="contentWrap"-->
+                <!--style="overflow:hidden; position: relative; zoom:1; width:100%; height:100%;">-->
+                <!--<ul style="width: 1080px;">-->
+                <!--<li style="float: left;">-->
+                <!--<div class="free-list mb-20">-->
+                <!--<a href="https://try.pclady.com.cn/10797.html?ad=10319" class="free-pic">-->
+                <!--<img width="120" height="120"-->
+                <!--src="https://img0.pclady.com.cn/pclady/try2011/1810/120-120.jpg"-->
+                <!--alt="菲洛嘉柔润亮泽面膜"> </a>-->
+                <!--<div class="freeInfo">-->
+                <!--<a href="https://try.pclady.com.cn/10797.html?ad=10319" target="_blank"-->
+                <!--class="free-tit mb-5 fs-14">菲洛嘉柔润亮泽面膜</a>-->
+                <!--<div class="time-count c888"> 10.22-11.05<br>数量：<i-->
+                <!--class="purple">10份</i></div>-->
+                <!--<a href="https://try.pclady.com.cn/10797.html?ad=10319" target="_blank"-->
+                <!--class="apply-btn fs-14">我要申请</a>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="free-list ">-->
+                <!--<a href="https://try.pclady.com.cn/10807.html?ad=10319" class="free-pic">-->
+                <!--<img width="120" height="120"-->
+                <!--src="https://img0.pclady.com.cn/pclady/try2011/1810/120_1.jpg"-->
+                <!--alt="薇弗葡萄籽强韧修护洗护套装"> </a>-->
+                <!--<div class="freeInfo">-->
+                <!--<a href="https://try.pclady.com.cn/10807.html?ad=10319" target="_blank"-->
+                <!--class="free-tit mb-5 fs-14">薇弗葡萄籽强韧修护洗护套装</a>-->
+                <!--<div class="time-count c888"> 10.29-11.12<br>数量：<i-->
+                <!--class="purple">10份</i></div>-->
+                <!--<a href="https://try.pclady.com.cn/10807.html?ad=10319" target="_blank"-->
+                <!--class="apply-btn fs-14">我要申请</a>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</li>-->
+                <!--<li style="float: left;">-->
+                <!--<div class="free-list mb-20">-->
+                <!--<a href="https://try.pclady.com.cn/10777.html?ad=10319" class="free-pic">-->
+                <!--<img width="120" height="120"-->
+                <!--src="https://img0.pclady.com.cn/pclady/try2011/1810/2341.png"-->
+                <!--alt="兰希黎御雪透亮祛斑霜"> </a>-->
+                <!--<div class="freeInfo">-->
+                <!--<a href="https://try.pclady.com.cn/10777.html?ad=10319" target="_blank"-->
+                <!--class="free-tit mb-5 fs-14">兰希黎御雪透亮祛斑霜</a>-->
+                <!--<div class="time-count c888"> 10.15-10.29<br>数量：<i-->
+                <!--class="purple">30份</i></div>-->
+                <!--<a href="https://try.pclady.com.cn/10777.html?ad=10319" target="_blank"-->
+                <!--class="apply-btn fs-14">我要申请</a>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="free-list ">-->
+                <!--<a href="https://try.pclady.com.cn/10757.html?ad=10319" class="free-pic">-->
+                <!--<img width="120" height="120"-->
+                <!--src="https://img0.pclady.com.cn/pclady/try2011/1810/120.jpg"-->
+                <!--alt="欧诗漫珍珠智慧水保湿面膜"> </a>-->
+                <!--<div class="freeInfo">-->
+                <!--<a href="https://try.pclady.com.cn/10757.html?ad=10319" target="_blank"-->
+                <!--class="free-tit mb-5 fs-14">欧诗漫珍珠智慧水保湿面膜</a>-->
+                <!--<div class="time-count c888"> 10.09-10.22<br>数量：<i-->
+                <!--class="purple">30份</i></div>-->
+                <!--<a href="https://try.pclady.com.cn/10757.html?ad=10319" target="_blank"-->
+                <!--class="apply-btn fs-14">我要申请</a>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</li>-->
+                <!--</ul>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="circle-ctrl">-->
+                <!--<span class="circle-wrap">-->
+                <!--<i class="item"></i>-->
+                <!--<i class="item"></i>-->
+                <!--</span>-->
+                <!--</div>-->
+                <!--</div>-->
+
+                <!--</div>-->
+                {include file="public/middle" /}
+                <!--热门宠物-->
+                {include file="public/bottom" /}
+            </div>
+
+
+        </div>
+    </div>
+    <script src="__STATIC__/index/js/lib-jquery1.10.2,dpl-jquery.slide.js"></script>
+    <script src="__STATIC__/index/js/art.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script>
+        document.body.style.overflowX = 'hidden';
+    </script>
+</body>
+
+</html>

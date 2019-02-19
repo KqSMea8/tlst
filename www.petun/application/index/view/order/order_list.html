@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" class="cw-desktop">
+
+<head>
+    <title>订单列表--{:sysconf('web_title')}</title>
+    <meta name="apple-mobile-web-app-title" content="Chewy.com">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="{:sysconf('web_keys')}"/>
+    <meta name="description" content="{:sysconf('web_desc')}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/main.9cd1cb456dc1b2580fab.css">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/account.7fbd0e4863cfd82e8041.css">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/checkout.98b4922f686cba768763.css">
+    <style>
+        thead tr td {
+            background-color: #F5F5F5;
+            color: #B0ABB0;
+            padding-left: 20px;
+            font-size: 14px;
+        }
+
+        thead tr td span {
+            color: #333;
+        }
+
+        .zjpjwxzf {
+            font-size: 16px;
+        }
+
+        
+    @media (max-width: 650px) {
+        .cw-logo img{margin-left: -14% !important;}
+    }
+    </style>
+</head>
+
+<body class="bd-account bd-sub-nav ">
+{include file="public/header" /}
+<div id="container">
+    <section class="account-section">
+        <div class="container">
+            <div id="breadcrumbs">
+                <a href="/app/account">账户</a> &#8250;
+                <span>订单列表</span>
+            </div>
+            <div class="account__buyitagain">
+                <div id="checkout-cart" class="" style="float: left !important;width: 100%;margin-top: 40px;">
+                    <div class="include">
+                        <h2 style="margin-top: 10px;font-size: 18px;">订单列表</h2> {volist name="order" id="o"}
+                        <div class="section">
+                            <div class="items">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <td colspan="20">
+                                            {$o.create_at}&nbsp;&nbsp;&nbsp;&nbsp;订单编号:<span>{$o.order_no}</span></td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {volist name="o['list']" id="ol"}
+                                    <tr>
+                                        <td class="image">
+                                            <img src="{$ol.goods_logo}"
+                                                 alt="Blue Buffalo Life Protection Formula Adult Chicken &amp; Brown Rice Recipe Dry Dog Food, 30-lb bag"
+                                                 width="55" height="55"/>
+                                        </td>
+                                        <td class="description">
+														<span class="name">
+				           {$ol.goods_title}</span>
+                                            <div class="qty">
+                                                数量: <span>{$ol.num}</span>
+                                            </div>
+
+                                            <span class="price">
+				        &yen;{$ol.selling_price}</span>
+
+                                            <div class="clear"></div>
+                                            <div>
+                                                {if ($o['status']>=5) and ($o['status']<6)}
+                                                {eq name="ol.is_comment" value="1"}
+                                                <a style="color:white;background:aqua;border-color: aqua;border-radius: 5px;cursor: pointer;display: block;width: 60px;height: 30px;line-height: 30px;text-align: center"
+                                                   href="/comment/{$ol.gid}/{$ol.id}"><strong>评论</strong></a>
+                                                {else /} <span style="font-size: 18px; color: #0bb20c">已评论</span>{/eq}
+                                            </div>
+                                            {/if}
+                                        </td>
+
+                                    </tr>
+
+                                    {/volist}
+                                    <tr>
+                                        <td colspan="20" class="zjpjwxzf">总价:{$o.pay_price}&nbsp;&nbsp;&nbsp;&nbsp;
+                                            {eq name="o.pay_type" value="1"}微信支付{else /}支付宝{/eq}&nbsp;&nbsp;&nbsp;&nbsp;
+                                            {switch o.pay_status}
+                                            {case 0}无效订单{/case}
+                                            {case 1}新订单{/case}
+                                            {case 2}待发货{/case}
+                                            {case 3}已发货{/case}
+                                            {case 4}已收货{/case}
+                                            {case 5}已完成{/case}
+                                            {default /} 已退货及退款 {/switch}
+                                            {if ($o['status']>=5) and ($o['status']<6)} <input type="button" value="删除"
+                                                                                               onclick="del('{$o.id}')">{/if}&nbsp;&nbsp;
+                                            {eq name="o.pay_status" value="1"}<input type="button" value="去支付"
+                                                                                     onclick="ju('{$o.id}')">{else
+                                            /}已支付{/eq}
+                                        </td>
+
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                        {/volist}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--foot-->
+</div>
+</body>
+
+</html>
+<script>
+    function ju(id) {
+        window.location.href = "{:url('Payment/index')}?oid=" + id;
+    }
+
+    function del(id) {
+        $.post("/order_del", {"id": id}, function (data) {
+            console.log(data);
+            var t = JSON.parse(data);
+            if (t.code == 1) {
+                layer.msg(t.msg);
+                setTimeout(function () {
+                    window.location.reload();
+                }, 666);
+
+            } else if (t.code == 2) {
+                layer.msg(t.msg);
+                return;
+            }
+        });
+    }
+</script>

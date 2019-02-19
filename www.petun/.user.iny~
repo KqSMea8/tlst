@@ -1,0 +1,1 @@
+open_basedir=/www/wwwroot/www.petun.cn/:/tmp/:/proc/:/home/www/.alibabacloud/credentials/

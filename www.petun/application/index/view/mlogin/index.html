@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" class="cw-desktop">
+
+<head>
+    <title>登录--{:sysconf('web_title')}</title>
+    <meta name="apple-mobile-web-app-title" content="Chewy.com">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="{:sysconf('web_keys')}" />
+    <meta name="description" content="{:sysconf('web_desc')}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/index.css">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/login.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="__STATIC__/layer/layer.js"></script>
+	<style>
+		@media screen and ( max-width: 650px ) {
+		.cw-logo img{margin-top: 0px;margin-right: 3px !important;}
+		.container{max-width: 100%;}
+		}
+	</style>
+</head>
+
+<body class="">
+<div id="container">
+    <header class="header-minimal">
+        <div class="fixed-container">
+            <div class="container">
+                <a href="/" class="cw-logo">
+                    <img src="{:sysconf('browser_logo')}" style="width: 10%;height: 10%;float: left;margin-right: 20px;" alt=""/>
+                </a>
+                <p class="secure-process">安全登录</p>
+                <ul class="checkout-nav js-dropdown">
+                    <li class="checkout-chat">
+                        <a href="#" class="checkout-chat-dd">问题吗?24/7的帮助</strong>
+                        </a>
+                        <div class="cw-drop cw-drop-help">
+                            <div class="cw-help-top">
+                                <p>从我们的专家那里得到24/7的帮助<span>1-800-672-4399</span></p>
+                            </div>
+                            <div class="cw-help-mid">
+
+                                <div id="chewyChatLinkContainer--header" class="js-chewyChatLinkContainer">
+                                    <div id="chewyChatLink--header" class="js-chewyChatLink">
+                                        <div id="chewyChatLinkInfo--header" class="js-chewyChatLinkInfo">
+                                            <div class="livechat cw-help-mid__livechat"><span>聊天</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-button">
+                        <a href="/">继续购物</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div id="wrap">
+        <div id="bd" class="">
+            <div id="content">
+                <form method="post" action="/app/login" id="form-login" class="login">
+                    <div class="signin form-fields-section">
+                        <h1>
+                            登记</h1>
+
+                        <div class="returningCustomer bg-form">
+                            <h3>我是回头客</h3>
+                            <fieldset>
+                                <ol>
+                                    <li class="field field--content">
+                                        <label for="username">电子邮件地址</label>
+                                        <div class="field__wrapper">
+                                            <input size="40" name="username" id="username" type="email" class="field__input field__input--email input--email" value="" /></div>
+                                    </li>
+
+                                    <li class="field field--content">
+                                        <label for="password">密码</label>
+                                        <div class="field__wrapper">
+                                            <input size="25" name="password" id="password" type="password" class="field__input field__input--pw input--password" /></div>
+                                    </li>
+                                    <!--<li>-->
+                                        <!--<a id="forgotPassword" href="/app/resetpassword/start" class="js-forgot-password">忘记了你的密码?</a>-->
+                                    <!--</li>-->
+
+                                </ol>
+
+                                <input type="hidden" name="_eventName" value="submit" />
+                                <input type="hidden" name="forceChallenge" value="false" />
+
+                                <input name="submitForm" type="button" class="cw-btn cw-btn--action input--submit js-login" value="登录" /></fieldset>
+
+                        </div>
+
+                        <div class="newCustomer">
+                            <h3>我是新顾客</h3>
+                            <p>创建帐户是快速、简单和免费的。您将能够跟踪您的订单，写评论，以及更多!</p>
+
+                            <a href="/register" class="cw-btn cw-btn--default js-create-account">创建账户</a>
+                        </div>
+                    </div>
+
+                    <input name="targetUrl" type="hidden" value="/app/account" />
+                    <div style="display: none;"><input type="hidden" name="_sourcePage" value="UWQKqcBwiQ78SjcFnbm6gNsgDvaE7b7xfT-CMMAdjJ3AnpzT2bI6PLOhDfa-gvMh1IlsIim_eIQLbrOGWRIVqKqdFZdNr4L3I4tSIvQjqi4=" /><input type="hidden" name="__fp" value="emBJVMN5qt0o0X-PbufhUAX1iOn8fukP9jsVpKZNoJlrdGJ8NUoQmC8p7TosfoZc" /></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-minimal">
+        <div class="container">
+            <p>问题吗?我们一天24小时都在这里:1-800-672-4399</p>
+            <ul>
+                <li>&copy; 2018 Chewy, Inc.</li>
+                <li>
+                    <a href="/app/content/terms" target="_blank">使用条款</a>
+                </li>
+                <li>
+                    <a href="/app/content/privacy" target="_blank">隐私政策</a>
+                </li>
+                <li id="GTS_CONTAINER" class="gts-badge"></li>
+            </ul>
+        </div>
+    </footer>
+</div>
+</body>
+
+</html>
+<script>
+    $(function () {
+        $(".js-login").click(function () {
+            $.post("/log_go",{"email":$("#username").val(),"password":$("#password").val()},function (data) {
+                var t=JSON.parse(data);
+                console.log(t);
+                switch (t.code) {
+                    case 1:
+                        layer.msg(t.msg);
+                        setTimeout(function () {
+window.location.href="/";
+                        },666);
+                        break;
+                    case 2:
+                        layer.msg(t.msg);
+                        break;
+                    case 3:
+                        layer.msg(t.msg);
+                        break;
+                    default:
+                        layer.msg(t.msg);
+
+                }
+            });
+        });
+    });
+</script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script>
+        document.body.style.overflowX = 'hidden';
+    </script>

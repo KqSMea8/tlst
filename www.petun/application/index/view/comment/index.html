@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" class="cw-desktop">
+
+<head>
+    <title>商品评论--{:sysconf('web_title')}</title>
+    <meta name="apple-mobile-web-app-title" content="Chewy.com">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="{:sysconf('web_desc')}"/>
+    <meta name="keywords" content="{:sysconf('web_keys')}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/main.9cd1cb456dc1b2580fab.css">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/reviews-write.32c2f42a9ec67653e0f7.css">
+
+    <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/globle.css"/>
+
+<body class="main-content">
+{include file="public/header" /}
+<div class="ugc ugc-write container js-ugc-write" id="ugc-target" data-product-part-number="62198"
+     data-user-id="45037531">
+    <article class="cw-card">
+        <section class="ugc-write__left hide-phone">
+            <img src="{$goods.goods_logo}"
+                 alt="Merrick Grain-Free Real Texas Beef &amp; Sweet Potato Recipe Dry Dog Food">
+        </section>
+        <div class="ugc-write__right">
+            <section class="ugc-write__center">
+                <form method="post" action="#" id="writeReviewForm" class="js-reviewWrite">
+                    <img src="//img.chewy.com/is/image/catalog/62201_MAIN._AC_SS180_V1507834719_.jpg" width="90"
+                         height="90" alt="" class="ugc-write__center__img hide-large">
+                    <header>
+                        <h2>{$goods.goods_title}</h2>
+                    </header>
+                    <div class="js-errors"></div>
+                    <div class="ugc-write__rate">
+                        <div class="ugc-write__stars field">
+                            <p>评价该项目：</p>
+                            <div class="field__wrapper">
+											<span class="cw-rating">
+                                            <input name="review.rating" id="rating-5" type="radio"
+                                                   class="js-radio-rating" value="5"/><label for="rating-5"></label>
+                                            <input name="review.rating" id="rating-4" type="radio"
+                                                   class="js-radio-rating" value="4"/><label for="rating-4"></label>
+                                            <input name="review.rating" id="rating-3" type="radio"
+                                                   class="js-radio-rating" value="3"/><label for="rating-3"></label>
+                                            <input name="review.rating" id="rating-2" type="radio"
+                                                   class="js-radio-rating" value="2"/><label for="rating-2"></label>
+                                            <input name="review.rating" id="rating-1" type="radio"
+                                                   class="js-radio-rating" value="1"/><label for="rating-1"></label>
+                                        </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hide-phone js-write-part2">
+                        <ol>
+                            <li class="field field--textarea">
+                                <label for="review.reviewText">你的评价:</label>
+                                <div class="field__wrapper">
+                                            <textarea name="review.reviewText" id="review.reviewText" rows="5"
+                                                      class="field__input js-reviewText" cols="80"
+                                                      style="    border: 1px solid #ccc;"></textarea></div>
+                            </li>
+
+                        </ol>
+                        <div class="scpho">
+                            {js href="/static/layui/layui.js" /}
+                            <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+                            <div class="upload-box">
+                                <p class="upload-tip">作品图片：最多可以上传1张图片，马上上传</p>
+                                <div class="image-box clear">
+                                    <section class="upload-section">
+                                        <!--<div class="upload-btn"></div>-->
+                                        <input type="file" name="file" id="upload-input" value=""
+                                               accept="image/jpg,image/jpeg,image/png,image/bmp"
+                                               multiple="multiple"/>
+                                        <div style="">
+                                            <img src="__STATIC__/index/img/addpic.png"
+                                                 style="width: 100px;height: 92px;">
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                            <!--<ul class="upload-ul clearfix">-->
+                            <!--<li class="upload-pick">-->
+                            <!--<div class="webuploader-container clearfix" id="goodsUpload"></div>-->
+                            <!--</li>-->
+                            <!--</ul>-->
+                            <p>
+                                <a class="upload-btn" href="javascript:;">提交</a>
+                            </p>
+                        </div>
+                        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+                        <script src="__STATIC__/index/js/webuploader.min.js"></script>
+                        <script src="__STATIC__/index/js/diyUpload.js"></script>
+                        <script src="__STATIC__/layer/layer.js"></script>
+                        <script>
+                            $(function () {
+                                //上传图片
+                                var $tgaUpload = $('#goodsUpload').diyUpload({
+                                    url: "{:url('Comment/uploadFilePath')}",
+                                    success: function (data) {
+                                        console.log(data);
+                                    },
+                                    error: function (err) {
+
+                                    },
+                                    buttonText: '',
+                                    accept: {
+                                        title: "Images",
+                                        extensions: 'gif,jpg,jpeg,bmp,png'
+                                    },
+                                    thumb: {
+                                        width: 120,
+                                        height: 90,
+                                        quality: 100,
+                                        allowMagnify: true,
+                                        crop: true,
+                                        type: "image/jpeg"
+                                    }
+                                });
+                            });
+                        </script>
+
+                        <link href="__STATIC__/index/css/upload.css" type="text/css" rel="stylesheet"/>
+                        <script src="__STATIC__/index/js/upload.js"></script>
+                        <script>
+                            $("#upload-input").ajaxImageUpload({
+                                url: '/index/Comment/upload', //上传的服务器地址
+                                data: {name: '勾国印'},
+                                maxNum: 6, //允许上传图片数量
+                                zoom: true, //允许上传图片点击放大
+                                allowType: ["gif", "jpeg", "jpg", "bmp", 'png'], //允许上传图片的类型
+                                maxSize: 1024, //允许上传图片的最大尺寸，单位M
+                                before: function () {
+
+                                },
+                                success: function (data) {
+
+                                    console.log(data);
+
+                                },
+                                // error:function (e) {
+                                //     alert('上传失败回调函数');
+                                //     console.log(e);
+                                // }
+                            });
+                        </script>
+                    </div>
+                </form>
+
+            </section>
+
+        </div>
+    </article>
+</div>
+</body>
+
+</html>
+<script>
+    $(function () {
+        $(".upload-btn").click(function () {
+            var a = "";
+            $(".image-show").each(function () {
+                a += $(this).attr("src") + "|";
+            });
+            var text = $(".js-reviewText").val();
+            var s = $("[name='review.rating']:checked").val();
+            $.post("/comment_do", {
+                "gid": "{$gid}",
+                "ol_id": "{$ol_id}",
+                "star": s,
+                "img": a,
+                "text": text
+            }, function (data) {
+                var t = JSON.parse(data);
+                console.log(t);
+                switch (t.code) {
+                    case 1:
+                        layer.msg(t.msg);
+                        setTimeout(function () {
+                            window.location.href = t.url;
+                        }, 666);
+                        break;
+                    case 2:
+                        layer.msg(t.msg);
+                        break;
+                    default:
+                        layer.msg(t.msg);
+                        break;
+
+                }
+            });
+        });
+    });
+</script>

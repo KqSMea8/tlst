@@ -1,0 +1,79 @@
+{include file="public/header" /}
+<div id="container">
+    <section class="account-section">
+        <div class="container">
+            <div id="breadcrumbs">
+                <a href="/app/account">账户</a> &#8250;
+                <span>收藏列表</span>
+            </div>
+            <div class="account__buyitagain">
+                <header class="account__buyitagain__header">
+                    <h1>收藏列表</h1>
+                    <ul class="account__buyitagain__subnav">
+                        <li></li>
+                        <li>
+                            <a href="/app/account/reorder"></a>
+                        </li>
+                    </ul>
+                </header>
+                <ul class="cw-card-list">
+                    {volist name="favorite" id="f"}
+                    <li class="buyitagain js-buyitagain ga-eec--32041 buyitagain--favorites">
+                        <div class="buyitagain__wrapper">
+                            <a href="#" class="buyitagain__remove cw-btn cw-btn--close js-buyitagain__remove"
+                               onclick="del('{$f.id}')">Remove</a>
+                            <div class="buyitagain__content">
+                                <div class="buyitagain__image">
+                                    <a href="" class="js-product-select product-image">
+                                        <img src="{$f.goods_logo}"
+                                             alt="Blue Buffalo  Life Protection Formula Adult Chicken &amp; Brown Rice Recipe Dry Dog Food, 30-lb bag"
+                                             width="70" height="70"/>
+                                    </a>
+                                </div>
+                                <div class="buyitagain__data">
+                                    <a href="" class="js-product-select">
+                                        {$f.goods_title}
+                                    </a>
+                                    <div class="buyitagain__price">
+                                        {volist name="f['spec']" id="fs"}
+                                        <span style="color: mediumseagreen"> ¥{$fs.selling_price}</span><br>
+                                        {/volist}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="buyitagain__actions">
+                                <a class="cw-btn cw-btn--default cw-btn--sm js-buyitagain-add-cart"
+                                   href="/goods_detail/{$f.gid}">去购买
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    {/volist}
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!--foot-->
+</div>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    function del(e) {
+        //alert($(e).text());
+        $.post("/del_favorite", {"id": e}, function (data) {
+            var t = JSON.parse(data);
+            if (t.code == 1) {
+                layer.msg(t.msg);
+                setTimeout(function () {
+                    window.location.reload();
+                }, 666);
+            } else if (t.code == 2) {
+                layer.msg(t.msg);
+                return;
+            }
+
+        });
+    }
+</script>
+</body>
+
+</html>

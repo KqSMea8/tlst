@@ -1,0 +1,313 @@
+{include file="public/header" /}
+<style>
+    @media (max-width: 320px) {
+        .main-content {
+            width: 80% !important;
+            margin-left: 18PX;
+        }
+    }
+    #header-main .container{width: 79% !important;}
+    /*.bd-search-results .container{width: 93% !important;padding: 0;}*/
+</style>
+<link rel="stylesheet" type="text/css" href="__STATIC__/index/css/search.css">
+<link rel="stylesheet" type="text/css" href="__STATIC__/index/css/login.css">
+<link rel="stylesheet" type="text/css" href="__STATIC__/index/css/register.css">
+
+<!--多个效果-->
+<link rel="stylesheet" type="text/css" href="__STATIC__/index/css/home.fb9a627bb1d3c7e96163.css">
+<link rel="stylesheet" type="text/css" href="__STATIC__/index/css/homepage-hero-carousel-v2.css">
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css"
+      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!--头部结束-->
+<main class="main-content">
+    <div class="bd-search-results">
+        <div class="container">
+            <div class="row results-category">
+                <aside class="results-filters">
+                    <div class="filters-container">
+                        <header class="filters-header">
+                            <p>显示结果:</p>
+                            <!--<button class="filters-close-btn"></button>-->
+                        </header>
+                        {empty name="c1|default=''"}{else /}
+                        <section class="filter-section filter-categories filter-full-height">
+                            <h5>类别</h5>
+                            <div class="filter-content">
+                                <ul class="backback">
+                                    <li class="filter-lvl-2">
+                                        < <a href="/all_list/{$c3.id}">{$c3.cate_title}</a>
+                                    </li>
+                                    <li class="filter-lvl-2">
+                                        < <a href="/goods_list/{$c2.id}">{$c2.cate_title}</a>
+                                    </li>
+                                    <li class="filter-selected">< <strong>{$c1.cate_title}</strong>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+                        {/empty}
+                        {empty name="cate|default=''"}{else /}
+                        <section class="filter-section filter-categories">
+                            <h5>类别</h5>
+                            <div class="filter-content">
+                                <ul class="">
+
+                                    <li class="filter-selected"><strong>宠物食品</strong></li>
+                                    {volist name="cate" id="c"}
+                                    <li class="filter-lvl-3">
+                                        <a href="/goods_list2/{$c.id}">{$c.cate_title}</a> ({$c.count})
+                                    </li>
+                                    {/volist}
+                                </ul>
+                            </div>
+                        </section>
+                        {/empty} {empty name="brand|default=''"}{else /}
+                        <section class="filter-section ">
+                            <h5>品牌</h5>
+                            <div class="filter-content">
+                                <ul class="filter-content-ratings">
+                                    {volist name="brand|default=''" id="b"}
+                                    <li>
+                                        <a href="/goods_list3/{$b.id}">
+
+                                            {$b.brand_title}</a> ({$b.count})
+                                    </li>
+                                    {/volist}
+                                </ul>
+                            </div>
+                        </section>
+                        {/empty}
+
+
+                    </div>
+                </aside>
+                <div class="results">
+                    <div class="results-content">
+                        <header class="results-header">
+                            <div class="results-header__title">
+                                <h1 class="results-cat-title">宠物食品</h1>
+                                <!--<p class="results-count">（90个结果中的1到36）排序</p>-->
+                            </div>
+                            {php}$img=db("store_banner")->where(["bname"=>"特价"])->value("bpath");{/php}
+                            <img src="{$img}" style="width: 100%;"/>
+                            <!--<form id="searchSortForm" action="/list_search" method="get" class="results-sort">-->
+                            <!--<label for="sort">按排序</label>-->
+                            <!--<span class="results-select-holder">-->
+                            <!--<select name="sel" onchange="this.form.submit();">-->
+                            <!--{foreach [1=>"最新",2=>"价格:低到高",3=>"价格:高到低",4=>"客户评论",5=>"大多数评论"] as $k=>$v}-->
+                            <!--{eq name="Think.get.sel" value="$k"}-->
+                            <!--<option value="{$k}" selected>{$v}</option>-->
+                            <!--{else /}-->
+                            <!--<option value="{$k}">{$v}</option>-->
+                            <!--{/eq}-->
+                            <!--{/foreach}-->
+                            <!--&lt;!&ndash;<option value="3">价格：低到高</option>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<option value="4">价格：高到低</option>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<option value="5">客户评论</option>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<option value="6">大多数评论</option>&ndash;&gt;-->
+                            <!--</select>-->
+                            <!--</span>-->
+                            <!--<noscript><input type="submit" alt="Go" value="Go"></noscript>-->
+                            <!--<button class="cw-btn cw-btn&#45;&#45;sm cw-btn&#45;&#45;white btn-filters">滤波器</button>-->
+                            <!--</form>-->
+                        </header>
+                        <section class="js-category-banner" data-category-identifier="landing-food">
+
+                        </section>
+
+                        <div class="results-featured-holder">
+                            {empty name="cate"}{else /}
+                            <section class="results-featured">
+                                <ul class="bxslider category-list">
+                                    {volist name="cate" id="c"}
+                                    <li class="featured-cat">
+                                        <a href="/goods_list2/{$c.id}">
+                                            <div class="featured-cat-holder">
+												<span class="thumbnail">
+                                    <img src="{$c.cate_img}"
+                                         alt="" width="75" height="75"/>
+                                </span>
+                                                <p class="name">{$c.cate_title}</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    {/volist}
+                                </ul>
+                            </section>
+                            {/empty}
+
+                        </div>
+
+
+                        <section class="results-products">
+                            {empty name="goods"}
+                            <div style="font-size: 20px;padding: 20px;color: #128CED;">
+                                该分类暂无产品
+                            </div>
+                            {else /}
+                            {volist name="goods" id="g"}
+                            {php}$spec=db("store_goods_list")->where(["goods_id"=>$g['id'],"status"=>1])->where("goods_stock",">",0)->order("id","asc")->find();
+                            {/php}
+                            <article class="product-holder  cw-card cw-card-hover">
+                                <a href="/goods_detail/{$g.id}" class="product ga-eec--34247 js-product-select">
+                                    <div class="image-holder">
+                                        <img src="{$g.goods_logo}"
+                                             alt="Taste of the Wild High Prairie Grain-Free Dry Dog Food, 30-lb bag"/>
+
+                                        <span href="/taste-wild-high-prairie-grain-free/dp/34247"
+                                              class="product-choices">
+					提供更多的选择
+				</span>
+
+                                        <div class="badge">
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="content">
+                                        <h2>
+
+
+                                            <strong>狂野的滋味</strong>
+                                            {if (request()->isMobile())}{$g.abbreviation}{else /}{$g.goods_title}{/if}
+
+
+                                        </h2>
+
+                                        <div class="product-info">
+
+                                            <p class="autoship">
+                                                <strong>
+                                                    ${$spec.selling_price}
+                                                </strong>
+                                                <!--<span>自动舵 &amp; 保存</span>-->
+                                            </p>
+
+                                            <p class="price">
+
+                                                <strong>
+                                                    ${$spec.market_price}
+                                                </strong>
+                                                <span class="price-old">
+
+												</span>
+
+                                            </p>
+
+                                            <p class="rating item-rating">
+
+                                                <picture>
+                                                    <source type="image/svg+xml"
+                                                            srcset="__STATIC__/index/fonts/rating-4_7.svg">
+                                                    <img src="__STATIC__/index/picture/rating-4_7_1.png">
+                                                </picture>
+                                                <span>{$g.package_sale}</span>
+                                            </p>
+
+
+                                        </div>
+                                    </div>
+
+                                    <section class="ga-eec__container hidden">
+                                        <div class="ga-eec__currencyCode">USD</div>
+                                        <div class="ga-eec__name">Taste of the Wild High Prairie Grain-Free Dry Dog
+                                            Food, 30-lb bag
+                                        </div>
+                                        <div class="ga-eec__id">49066</div>
+                                        <div class="ga-eec__brand">Taste of the Wild</div>
+                                        <div class="ga-eec__category">294</div>
+                                        <div class="ga-eec__category-hierarchy"></div>
+
+                                        <div class="ga-eec__price">48.99</div>
+
+                                        <div class="ga-eec__position">1</div>
+
+                                        <div class="ga-eec__variant">30-lb bag</div>
+                                    </section>
+                                </a>
+
+                            </article>
+                            {/volist}
+                            {/empty}
+
+
+                        </section>
+                        <section class="cw-pagination results-pagination">
+                            {$goods->render()|raw}
+                            <ul class="cw-pagination__list">
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+
+                <div class="filter-mask"></div>
+            </div>
+        </div>
+    </div>
+</main>
+<!--footer-->
+{include file="public/foot" /}
+<script>
+    $(function () {
+        var usersdivl = $(".pet-drop-left.js-pet-drop-left ul");
+        var text = "";
+        $.post("/get_first", {
+            "ajax": "yes"
+        }, function (data) {
+            var t = JSON.parse(data);
+            console.log(t);
+            for (var i = 0; i < t.length; i++) {
+                text += "<li><a  onmouseover='showson(" + t[i].id + ")'>" + t[i].cate_title + "</a></li>";
+            }
+            usersdivl.html(text);
+        });
+    });
+</script>
+<script>
+    function showson(id) {
+        $.post("/cate_get", {
+            "ajax": "yes",
+            "id": id
+        }, function (data) {
+            //console.log(data)
+            $(".js-pet-drop-right").html(data);
+        })
+    }
+</script>
+<script>
+    $(function () {
+        $.post("/brand_get", {
+            "ajax": "yes",
+            "initials": "A",
+        }, function (data) {
+            //console.log(data)
+            $(".brand-listdiv").html(data);
+        })
+    });
+
+    function showsona(initials) {
+        $.post("/brand_get", {
+            "ajax": "yes",
+            "initials": initials,
+        }, function (data) {
+            //console.log(data)
+            $(".brand-listdiv").html(data);
+        })
+    }
+
+    $(".cw-drop.drop-brand").on("click", "li", function () {
+        $(".drop-brand-letters li").removeClass("is-selected");
+        $(this).addClass("is-selected");
+    });
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="100229030" charset="utf-8"></script>
+</head>
+<body>
+<span id="qqLoginBtn">登录</span>
+<script type="text/javascript">
+    QC.Login({
+        btnId:"qqLoginBtn"	//插入按钮的节点id
+    });
+    if(QC.Login.check()){//如果已登录
+        QC.Login.getMe(function(openId, accessToken){
+            alert(["当前登录用户的", "openId为："+openId, "accessToken为："+accessToken].join("\n"));
+        });
+
+    }
+</script>
+</body>
+</html>

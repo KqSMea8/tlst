@@ -1,0 +1,23 @@
+{php}$fine=db("store_article")->where(["is_deleted"=>0])->order("azan","desc")->limit(6)->select(){/php}
+<div class="col-ab" id="artExt">
+    <div class="jpReduce mt-60">
+        <div class="jpTit col-ab-tit">
+            <span>精品推荐</span>
+        </div>
+        <div class="jpList">
+            <ul class="pics">
+                {volist name="fine" id="f"}
+                <li>
+                    <a href="/ed_detail/{$f.id}" class="aniTit little">
+                        <img src="{$f.alogo}" src="" alt="" width='230'/>
+                        <span class="title-alpha">{$f.atitle}</span>
+                    </a>
+                </li>
+                {/volist}
+            </ul>
+        </div>
+    </div>
+    <div class="ivy780 ivy-tonglan">
+    </div>
+    <div class="modGroup modGroupPclady" id="modGroup" style="margin-top:40px"></div>
+</div>

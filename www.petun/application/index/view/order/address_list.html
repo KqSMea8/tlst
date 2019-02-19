@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" class="cw-desktop">
+
+	<head>
+		<title>地址列表--{:sysconf('web_title')}</title>
+		<meta name="apple-mobile-web-app-title" content="Chewy.com">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="keywords" content="{:sysconf('web_keys')}" />
+		<meta name="description" content="{:sysconf('web_desc')}" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="__STATIC__/index/css/main.9cd1cb456dc1b2580fab.css">
+		<link rel="stylesheet" type="text/css" href="__STATIC__/index/css/account.7fbd0e4863cfd82e8041.css">
+		
+	</head>
+
+	<body class="bd-account bd-sub-nav bd-addressbook">
+	{include file="public/header" /}
+		<div id="container">
+			<section class="account-section">
+				<div class="container">
+					<div id="breadcrumbs">
+						<a href="/app/account">帐户</a> &#8250;
+						<span>地址</span>
+					</div>
+					<h1>地址</h1>
+					<section class="account-area account-area--ready">
+						{volist name="address" id="a"}
+						<a href="/edit_address2/{$a.id}" class="account-block account-block--address cw-card cw-card--action cw-card-hover">
+							<ul>
+								<li class="name">{$a.username}</li>
+								<li>{$a.province}{$a.city}{$a.area}{$a.address}</li>
+								<li>电话: {$a.phone}</li>
+							</ul>
+						</a>
+						{/volist}
+						<a href="/edit_address" class="account-block account-block--new cw-btn cw-btn--dashed">
+							<span>+添加新地址</span>
+						</a>
+					</section>
+				</div>
+			</section>
+		</div>
+	</body>
+
+</html>

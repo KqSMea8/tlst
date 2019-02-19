@@ -1,0 +1,19 @@
+{php}  $right = db("store_article")->field("id,alogo,atitle,add_time")->where(["is_deleted" => 0])->order("add_time", "desc")->limit(4)->select();{/php}
+<div class="hasBorder newTopic mb-40">
+    <div class="c-Title mb-20">
+        <span>最新文章</span>
+    </div>
+    <div class="cont">
+        {volist name="right" id="r"}
+        <div class="pic-txt">
+            <a href="/en_detail/{$r.id}" target="_blank" class="pic-area">
+                <img src="{$r.alogo}" alt="{$r.atitle}" width='120'>
+            </a>
+            <div class="txt-area">
+                <a href="/en_detail/{$r.id}" target="_blank" class='fs-14 tit'>{$r.atitle}</a>
+                <span class="time c888 fs-14">{$r.add_time}</span>
+            </div>
+        </div>
+        {/volist}
+    </div>
+</div>

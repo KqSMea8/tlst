@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en" class="cw-desktop">
+
+<head>
+
+    <title>宠物网站</title>
+    <meta name="apple-mobile-web-app-title" content="Chewy.com">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="{:sysconf('web_keys')}"/>
+    <meta name="description" content="{:sysconf('web_desc')}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/index.css">
+    <!--<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>-->
+    <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
+    <script>
+        $(function () {
+            var availableTags = [
+                "ActionScript",
+                "AppleScript",
+                "Asp",
+                "BASIC",
+                "C",
+                "C++",
+                "Clojure",
+                "COBOL",
+                "ColdFusion",
+                "Erlang",
+                "Fortran",
+                "Groovy",
+                "Haskell",
+                "Java",
+                "JavaScript",
+                "Lisp",
+                "Perl",
+                "PHP",
+                "Python",
+                "Ruby",
+                "Scala",
+                "Scheme"
+            ];
+            $("#tags").autocomplete({
+                source: availableTags
+            });
+        });
+    </script>
+    <script src="__STATIC__/layer/layer.js"></script>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/account.7fbd0e4863cfd82e8041.css">
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <style>
+        .brand-tiles {
+            color: #333;
+            font-size: 18px;
+            line-height: 30px;
+        }
+
+        .span_Font {
+            font-weight: 900;
+            font-size: 18px;
+        }
+
+        /*无*/
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        !function (e) {
+            function t(t) {
+                for (var n, a, i = t[0], c = t[1], f = t[2], p = 0, s = []; p < i.length; p++) a = i[p], o[a] && s.push(o[a][0]), o[a] = 0;
+                for (n in c) Object.prototype.hasOwnProperty.call(c, n) && (e[n] = c[n]);
+                for (l && l(t); s.length;) s.shift()();
+                return u.push.apply(u, f || []), r()
+            }
+
+            function r() {
+                for (var e, t = 0; t < u.length; t++) {
+                    for (var r = u[t], n = !0, i = 1; i < r.length; i++) {
+                        var c = r[i];
+                        0 !== o[c] && (n = !1)
+                    }
+                    n && (u.splice(t--, 1), e = a(a.s = r[0]))
+                }
+                return e
+            }
+
+            var n = {},
+                o = {
+                    0: 0
+                },
+                u = [];
+
+            function a(t) {
+                if (n[t]) return n[t].exports;
+                var r = n[t] = {
+                    i: t,
+                    l: !1,
+                    exports: {}
+                };
+                return e[t].call(r.exports, r, r.exports, a), r.l = !0, r.exports
+            }
+
+            a.e = function (e) {
+                var t = [],
+                    r = o[e];
+                if (0 !== r)
+                    if (r) t.push(r[2]);
+                    else {
+                        var n = new Promise(function (t, n) {
+                            r = o[e] = [t, n]
+                        });
+                        t.push(r[2] = n);
+                        var u, i = document.getElementsByTagName("head")[0],
+                            c = document.createElement("script");
+                        c.charset = "utf-8", c.timeout = 120, a.nc && c.setAttribute("nonce", a.nc), c.src = function (e) {
+                            return a.p + "" + ({
+                                1: "vendors"
+                            }[e] || e) + "." + {
+                                1: "772274427a0548f292bd",
+                                71: "d1dd419292b2f863cc02",
+                                72: "250bc1c72a644f6e2136",
+                                73: "76cc600591757795b379",
+                                74: "74d436895459a9603e5b",
+                                75: "d4d14043e757f8c1bf89",
+                                76: "fab03b4c3d68a13be0a3"
+                            }[e] + ".packaged.js"
+                        }(e), u = function (t) {
+                            c.onerror = c.onload = null, clearTimeout(f);
+                            var r = o[e];
+                            if (0 !== r) {
+                                if (r) {
+                                    var n = t && ("load" === t.type ? "missing" : t.type),
+                                        u = t && t.target && t.target.src,
+                                        a = new Error("Loading chunk " + e + " failed.\n(" + n + ": " + u + ")");
+                                    a.type = n, a.request = u, r[1](a)
+                                }
+                                o[e] = void 0
+                            }
+                        };
+                        var f = setTimeout(function () {
+                            u({
+                                type: "timeout",
+                                target: c
+                            })
+                        }, 12e4);
+                        c.onerror = c.onload = u, i.appendChild(c)
+                    }
+                return Promise.all(t)
+            }, a.m = e, a.c = n, a.d = function (e, t, r) {
+                a.o(e, t) || Object.defineProperty(e, t, {
+                    enumerable: !0,
+                    get: r
+                })
+            }, a.r = function (e) {
+                "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, {
+                    value: "Module"
+                }), Object.defineProperty(e, "__esModule", {
+                    value: !0
+                })
+            }, a.t = function (e, t) {
+                if (1 & t && (e = a(e)), 8 & t) return e;
+                if (4 & t && "object" == typeof e && e && e.__esModule) return e;
+                var r = Object.create(null);
+                if (a.r(r), Object.defineProperty(r, "default", {
+                    enumerable: !0,
+                    value: e
+                }), 2 & t && "string" != typeof e)
+                    for (var n in e) a.d(r, n, function (t) {
+                        return e[t]
+                    }.bind(null, n));
+                return r
+            }, a.n = function (e) {
+                var t = e && e.__esModule ? function () {
+                    return e.default
+                } : function () {
+                    return e
+                };
+                return a.d(t, "a", t), t
+            }, a.o = function (e, t) {
+                return Object.prototype.hasOwnProperty.call(e, t)
+            }, a.p = "", a.oe = function (e) {
+                throw console.error(e), e
+            }, Object.defineProperty(a, "p", {
+                get: function () {
+                    return "/assets/js/"
+                }
+            });
+            var i = window.webpackJsonp = window.webpackJsonp || [],
+                c = i.push.bind(i);
+            i.push = t, i = i.slice();
+            for (var f = 0; f < i.length; f++) t(i[f]);
+            var l = c;
+            r()
+        }([]);
+        
+        
+    </script>
+
+    <script src="__STATIC__/index/js/common-head-desktop.4140dc87be02600e98c5.packaged.js"></script>
+    <script src="__STATIC__/index/js/main-utilities.1c2ad8283800211c4f52.packaged.js"></script>
+
+</head>
+
+<body class="bd-category">
+	
+<script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start': new Date().getTime(),
+            event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5X325N');
+</script>
+<div class="header-wrapper">
+    <header id="header-main" role="banner">
+        <section class="header-top">
+            <div class="container">
+                <div class="header-left">
+                    <a href="#fenlei" class="trigger-menu nav-icon" onclick="fenlei(this)">
+                        <span></span>
+                    </a>
+                    <script>
+                        function fenlei(a) {
+                            $(".cw-drop.drop-pet").css({
+                                "display": "block",
+                                "margin-top": "150px"
+                            })
+                        }
+
+                        //.arrow-nav>li:hover .cw-drop
+                    </script>
+                    <a href="/" class="cw-logo">
+                        <img src="{:sysconf('browser_logo')}" style="width: 90%;height: 90%;" alt=""/>
+                    </a>
+                    <!--{:sysconf('browser_logo')}-->
+                    <div class="ui-widget">
+                        <section class="search__wrapper empty-search">
+                            <form id="header-searchform" role="form" action="/goods_list">
+                                <input id="tags" type="search" name="query" placeholder="搜索" role="search"
+                                       class="nav-search nav-search-field">
+                                <button type="submit" name="nav-submit-button" class="btn-search"></button>
+                                <!--<a href="#" class="search-delete delete-text"></a>-->
+                            </form>
+                        </section>
+                    </div>
+                </div>
+                <nav class="header-right" role="navigation">
+                    <ul class="arrow-nav js-dropdown">
+                        <li class="not-logged nav-drop nav-drop-pet">
+                            {empty name="Think.session.member"}
+                            <a href="javascript:void (0)" class="js-load-dynamicmenu top-nav-account ">
+                                <span class="top-nav-account"><span class="visible-desktoplg">你的</span>账户</span>
+                            </a>{else /}
+                            <a class="js-load-dynamicmenu top-nav-account account-logged">
+										<span class="top-nav-username">
+		                                    你好, {$Think.session.member.nickname}!
+		                                </span>
+                                <span class="top-nav-account"><span class="visible-desktoplg">你的</span>账户</span>
+                            </a>
+                            {/empty}
+
+                            <div class="cw-drop cw-drop-account">
+                                <div class="cw-drop-account-right"> {empty name="Think.session.member"}
+                                    <div class="cw-account-signin">
+                                        <a href="/login"
+                                           class="cw-btn cw-btn--action cw-btn--full js-header-sign-in dengluzz">登录</a>
+                                        <p class="new-customer">新客户?
+                                            <a href="/register">从这里开始</a>
+                                        </p>
+                                    </div>
+                                    {else /}
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:void (0)" onclick="out_log()">退出</a>
+                                        </li>
+                                        <li>
+                                            <a href="/user">账户</a>
+                                        </li>
+                                        <li>
+                                            <a href="/order_list">订单</a>
+                                        </li>
+                                        <li>
+                                            <a href="/favorite">最喜欢的</a>
+                                        </li>
+                                        <li>
+                                            <a href="/address_list">地址管理</a>
+                                        </li>
+                                    </ul>
+                                    {/empty}
+
+                                </div>
+
+                            </div>
+                        </li>
+                        {php} $uid=session("member.id"); $cart_count=db("store_goods_cart")->where("mid",$uid)->count();
+                        {/php}
+                        <li class="header-cart nav-drop nav-drop-pet">
+                            <a href="javascript:void (0)" onclick="jump()" class="js-load-dynamicmenu basket ">
+                                <span class="quantity ">{$cart_count}</span>
+                                <span class="icon-cart"></span>
+                                <span class="hidden-tablet"><span class="visible-desktoplg">我的</span>购物车</span>
+                            </a>
+
+                            <div id="minicart" class="cw-drop cw-drop-right nav-empty" style="display: none;">
+                                <div class="cw-loader">Loading...</div>
+                                {gt name="cart_count" value="0"}
+                                <div class="cart-full">
+                                    <div class="ajax-content">
+                                        <div class="summary">
+                                            <div class="left">
+                                                Cart Subtotal: <span class="subtotal">$0.00</span>
+                                            </div>
+                                            <div class="right">
+                                                <a href="/add_cart">Edit Cart</a>
+                                            </div>
+                                            <a href="/app/checkout"
+                                               class="cw-btn cw-btn--action cw-btn--full js-gtm-proceed-to-checkout-dynamic">Proceed
+                                                to Checkout</a>
+                                        </div>
+
+                                        <ul>
+
+                                        </ul>
+                                    </div>
+                                    <div id="gaCartDomParent"></div>
+                                </div>
+                                {else /}
+                                <div class="cart-empty">
+                                    <h3>你的手推车是空的.</h3>
+                                    <p>丢失的东西?
+                                        <a href="/login">登录</a>查看可能从其他计算机或设备添加的项。.</p>
+                                </div>
+                                {/gt}
+
+                            </div>
+                        </li>
+                    </ul>
+                    <script>
+                        function out_log() {
+                            $.post("/log_out", {
+                                "ajax": "out"
+                            }, function (dg) {
+                                var t = JSON.parse(dg);
+
+                                layer.msg(t.msg);
+                                setTimeout(function () {
+                                    window.location.href = t.url;
+                                }, 666);
+                            });
+                        }
+
+                        function jump() {
+                            if (parseInt("{$cart_count}") <= 0) {
+                                layer.msg("购物车为空");
+                                return;
+                            } else {
+                                window.location.href = "/add_cart";
+                            }
+                        }
+                    </script>
+                </nav>
+            </div>
+        </section>
+        <section class="header-bottom">
+            <div class="container">
+                <div class="header-left">
+                    <nav class="nav-main" role="navigation">
+                        <ul class="arrow-nav js-dropdown">
+                            <!--<li class="nav-button nav-button--daily">
+                                <a href="{:url('Encyclopedias/index')}">
+                                    <span class="sale-label  sale-label--daily span_Font" data-hierarchy="Today&#39;s-Deals">宠物百科</span>
+                                </a>
+                            </li>-->
+                            <li class="nav-drop nav-drop-pet">
+                                <a>宠物店</a>
+                                <div class="cw-drop drop-pet">
+                                    <div class="drop-pet--container">
+                                        <section class="pet-drop-left js-pet-drop-left">
+                                            <ul>
+                                                <li>
+                                                    <a href="" data-hierarchy="Dog" data-target="pet-drop-category__dog"
+                                                       id="1">狗</a>
+                                                </li>
+                                            </ul>
+                                        </section>
+                                        <section class="pet-drop-right js-pet-drop-right"></section>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="js-nav-brand nav-drop nav-drop-brand nav-drop nav-drop-pet">
+                                <a href="/brand" class="js-ga-hierarchy span_Font"
+                                   data-hierarchy="shop-by-brand">商店的品牌</a>
+
+                                <div class="cw-drop drop-brand">
+
+                                    <ul class="drop-brand-letters">
+                                        <li class="brands-A  is-selected">
+                                            <a href="#" onmousedown='showsona("A")'>A</a>
+                                        </li>
+                                        <li class="brands-B ">
+                                            <a href="#" onmousedown='showsona("B")'>B</a>
+                                        </li>
+                                        <li class="brands-C ">
+                                            <a href="#" onmousedown='showsona("C")'>C</a>
+                                        </li>
+                                        <li class="brands-D ">
+                                            <a href="#" onmousedown='showsona("D")'>D</a>
+                                        </li>
+                                        <li class="brands-E ">
+                                            <a href="#" onmousedown='showsona("E")'>E</a>
+                                        </li>
+                                        <li class="brands-F ">
+                                            <a href="#" onmousedown='showsona("F")'>F</a>
+                                        </li>
+                                        <li class="brands-G ">
+                                            <a href="#" onmousedown='showsona("G")'>G</a>
+                                        </li>
+                                        <li class="brands-H ">
+                                            <a href="#" onmousedown='showsona("H")'>H</a>
+                                        </li>
+                                        <li class="brands-I ">
+                                            <a href="#" onmousedown='showsona("I")'>I</a>
+                                        </li>
+                                        <li class="brands-J ">
+                                            <a href="#" onmousedown='showsona("J")'>J</a>
+                                        </li>
+                                        <li class="brands-K ">
+                                            <a href="#" onmousedown='showsona("K")'>K</a>
+                                        </li>
+                                        <li class="brands-L ">
+                                            <a href="#" onmousedown='showsona("L")'>L</a>
+                                        </li>
+                                        <li class="brands-M ">
+                                            <a href="#" onmousedown='showsona("M")'>M</a>
+                                        </li>
+                                        <li class="brands-N ">
+                                            <a href="#" onmousedown='showsona("N")'>N</a>
+                                        </li>
+                                        <li class="brands-O ">
+                                            <a href="#" onmousedown='showsona("O")'>O</a>
+                                        </li>
+                                        <li class="brands-P ">
+                                            <a href="#" onmousedown='showsona("P")'>P</a>
+                                        </li>
+                                        <li class="brands-Q ">
+                                            <a href="#" onmousedown='showsona("Q")'>Q</a>
+                                        </li>
+                                        <li class="brands-R ">
+                                            <a href="#" onmousedown='showsona("R")'>R</a>
+                                        </li>
+                                        <li class="brands-S ">
+                                            <a href="#" onmousedown='showsona("S")'>S</a>
+                                        </li>
+                                        <li class="brands-T ">
+                                            <a href="#" onmousedown='showsona("T")'>T</a>
+                                        </li>
+                                        <li class="brands-U ">
+                                            <a href="#" onmousedown='showsona("U")'>U</a>
+                                        </li>
+                                        <li class="brands-V ">
+                                            <a href="#" onmousedown='showsona("V")'>V</a>
+                                        </li>
+                                        <li class="brands-W ">
+                                            <a href="#" onmousedown='showsona("W")'>W</a>
+                                        </li>
+                                        <li class="brands-X ">
+                                            <a href="#" onmousedown='showsona("X")'>X</a>
+                                        </li>
+                                        <li class="brands-Y ">
+                                            <a href="#" onmousedown='showsona("Y")'>Y</a>
+                                        </li>
+                                        <li class="brands-Z ">
+                                            <a href="#" onmousedown='showsona("Z")'>Z</a>
+                                        </li>
+                                        <li class="brands-_ ">
+                                            <a href="#_" onmousedown='showsona("#")'>#</a>
+                                        </li>
+                                    </ul>
+
+                                    <div class="brand-listdiv">
+
+                                    </div>
+
+                                    <div data-cms-uid="nav-mm-brands-10" class="cms-include brand-logos">
+
+                                        <ul class="brand-tiles" data-promo-name="">
+                                            <!--<li data-promo-creative="blue-buffalo" data-position="1">
+                        <a class="cw-card"
+                           href="http://www.chewy.com/s?page=1&amp;rh=brand_facet%3ABlue+Buffalo">
+                            <img src="//cms-www.chewy.com/contentAsset/raw-data/3781f0b7-293b-4b0c-848d-c98b1b0eeb51/brandLogo"
+                                 alt="Blue Buffalo">
+                        </a>
+                    </li>-->
+                                        </ul>
+
+                                    </div>
+
+                                    <div class="brand-overflow"></div>
+                                </div>
+                            </li>
+                            {php} $id = db("store_goods_cate")->where("cate_title", "药学")->value("id");
+                            $pid = db("store_goods_cate")->where("pid", $id)->column("id");
+                            $pharmacy=db("store_goods_cate")->where("pid","in",$pid)->limit(8)->select();
+                            $first=db("store_goods_cate")->where(["is_deleted"=>0,"cate_title"=>"治疗"])->value("id");
+                            {/php}
+                            <li class="nav-drop nav-drop--pharmacy nav-drop nav-drop-pet">
+                                <a class="pharmacy-label span_Font " href="/goods_list/{$first}"
+                                   data-hierarchy="Pharmacy">药房</a>
+
+                                <div class="cw-drop drop-pharmacy">
+                                    <ul class="drop-pharmacy__list">
+                                        {volist name="pharmacy" id="p"}
+                                        <li>
+                                            <a href="/goods_list/{$p.id}" data-hierarchy="Heartworm"
+                                               data-target="drop-pharmacy__category-rx-heartworm">
+                                                {$p.cate_title}</a>
+                                        </li>
+                                        {/volist}
+
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-button nav-button--daily">
+
+                                <a href="/sale/1">
+											<span class="sale-label  span_Font sale-label--daily"
+                                                  data-hierarchy="Today&#39;s-Deals">
+                                                今日特价
+                                            </span>
+                                </a>
+                            </li>
+                            <li class="nav-button nav-button--daily">
+
+                                <a href="{:url('About/index')}">
+											<span class="sale-label  span_Font sale-label--daily"
+                                                  data-hierarchy="Today&#39;s-Deals">
+                                                联系我们
+                                            </span>
+                                </a>
+                            </li>
+                            <li class="nav-button nav-button--daily">
+
+                                <a href="{:url('About/question')}">
+											<span class="sale-label  span_Font sale-label--daily"
+                                                  data-hierarchy="Today&#39;s-Deals">
+                                                常见问题
+                                            </span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+                <!--<div class="header-right">
+    <a href="#" data-modal-target="modal-freeshipping" class="header-shipping">
+        免费的1-2天运输在49美元!
+    </a>
+</div>-->
+            </div>
+        </section>
+    </header>
+</div>
+<script>
+    $(function () {
+        var usersdivl = $(".pet-drop-left.js-pet-drop-left ul");
+        var text = "";
+        $.post("/get_first", {
+            "ajax": "yes"
+        }, function (data) {
+            var t = JSON.parse(data);
+            console.log(t);
+            for (var i = 0; i < t.length; i++) {
+                text += "<li><a href='/all_list/" + t[i].id + "' onmouseover='showson(" + t[i].id + ")'>" + t[i].cate_title + "</a></li>";
+                // text += "<li><a href='javascript:void(0)' onmouseover='showson(" + t[i].id + ")'>" + t[i].cate_title + "</a></li>";
+            }
+            usersdivl.html(text);
+        });
+    });
+</script>
+<script>
+    function showson(id) {
+        $.post("/cate_get", {
+            "ajax": "yes",
+            "id": id
+        }, function (data) {
+            //console.log(data)
+            $(".js-pet-drop-right").html(data);
+        })
+    }
+
+
+</script>
+<script>
+    $(function () {
+        $.post("/brand_get", {
+            "ajax": "yes",
+            "initials": "A",
+        }, function (data) {
+            //console.log(data)
+            $(".brand-listdiv").html(data);
+        })
+    });
+
+    function showsona(initials) {
+        $.post("/brand_get", {
+            "ajax": "yes",
+            "initials": initials,
+        }, function (data) {
+            console.log(data)
+            $(".brand-listdiv").html(data);
+        })
+    }
+
+    $(".cw-drop.drop-brand").on("click", "li", function () {
+        $(".drop-brand-letters li").removeClass("is-selected");
+        $(this).addClass("is-selected");
+    });
+</script>

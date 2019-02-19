@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en" class="cw-desktop">
+
+<head>
+
+    <title>产品详情页--{:sysconf('web_title')}</title>
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="{:sysconf('web_desc')}"/>
+    <meta name="keywords" content="{:sysconf('web_keys')}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/index.css">
+    <script type="text/javascript">
+        !function (e) {
+            function t(t) {
+                for (var n, u, i = t[0], c = t[1], f = t[2], p = 0, s = []; p < i.length; p++) u = i[p], o[u] && s.push(o[u][0]), o[u] = 0;
+                for (n in c) Object.prototype.hasOwnProperty.call(c, n) && (e[n] = c[n]);
+                for (l && l(t); s.length;) s.shift()();
+                return a.push.apply(a, f || []), r()
+            }
+
+            function r() {
+                for (var e, t = 0; t < a.length; t++) {
+                    for (var r = a[t], n = !0, i = 1; i < r.length; i++) {
+                        var c = r[i];
+                        0 !== o[c] && (n = !1)
+                    }
+                    n && (a.splice(t--, 1), e = u(u.s = r[0]))
+                }
+                return e
+            }
+
+            var n = {},
+                o = {
+                    0: 0
+                },
+                a = [];
+
+            function u(t) {
+                if (n[t]) return n[t].exports;
+                var r = n[t] = {
+                    i: t,
+                    l: !1,
+                    exports: {}
+                };
+                return e[t].call(r.exports, r, r.exports, u), r.l = !0, r.exports
+            }
+
+            u.e = function (e) {
+                var t = [],
+                    r = o[e];
+                if (0 !== r)
+                    if (r) t.push(r[2]);
+                    else {
+                        var n = new Promise(function (t, n) {
+                            r = o[e] = [t, n]
+                        });
+                        t.push(r[2] = n);
+                        var a, i = document.getElementsByTagName("head")[0],
+                            c = document.createElement("script");
+                        c.charset = "utf-8", c.timeout = 120, u.nc && c.setAttribute("nonce", u.nc), c.src = function (e) {
+                            return u.p + "" + ({
+                                1: "vendors"
+                            }[e] || e) + "." + {
+                                1: "9240aa73307e7b9149fd",
+                                71: "f84d061b342414dff994",
+                                72: "250bc1c72a644f6e2136",
+                                73: "a0e0f5f073076a8412d1",
+                                74: "90cf4e317ca8631ea4b1",
+                                75: "c2b072eed4cc72817412",
+                                76: "fab03b4c3d68a13be0a3"
+                            }[e] + ".packaged.js"
+                        }(e), a = function (t) {
+                            c.onerror = c.onload = null, clearTimeout(f);
+                            var r = o[e];
+                            if (0 !== r) {
+                                if (r) {
+                                    var n = t && ("load" === t.type ? "missing" : t.type),
+                                        a = t && t.target && t.target.src,
+                                        u = new Error("Loading chunk " + e + " failed.\n(" + n + ": " + a + ")");
+                                    u.type = n, u.request = a, r[1](u)
+                                }
+                                o[e] = void 0
+                            }
+                        };
+                        var f = setTimeout(function () {
+                            a({
+                                type: "timeout",
+                                target: c
+                            })
+                        }, 12e4);
+                        c.onerror = c.onload = a, i.appendChild(c)
+                    }
+                return Promise.all(t)
+            }, u.m = e, u.c = n, u.d = function (e, t, r) {
+                u.o(e, t) || Object.defineProperty(e, t, {
+                    enumerable: !0,
+                    get: r
+                })
+            }, u.r = function (e) {
+                "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, {
+                    value: "Module"
+                }), Object.defineProperty(e, "__esModule", {
+                    value: !0
+                })
+            }, u.t = function (e, t) {
+                if (1 & t && (e = u(e)), 8 & t) return e;
+                if (4 & t && "object" == typeof e && e && e.__esModule) return e;
+                var r = Object.create(null);
+                if (u.r(r), Object.defineProperty(r, "default", {
+                    enumerable: !0,
+                    value: e
+                }), 2 & t && "string" != typeof e)
+                    for (var n in e) u.d(r, n, function (t) {
+                        return e[t]
+                    }.bind(null, n));
+                return r
+            }, u.n = function (e) {
+                var t = e && e.__esModule ? function () {
+                    return e.default
+                } : function () {
+                    return e
+                };
+                return u.d(t, "a", t), t
+            }, u.o = function (e, t) {
+                return Object.prototype.hasOwnProperty.call(e, t)
+            }, u.p = "", u.oe = function (e) {
+                throw console.error(e), e
+            }, Object.defineProperty(u, "p", {
+                get: function () {
+                    return "/assets/js/"
+                }
+            });
+            var i = window.webpackJsonp = window.webpackJsonp || [],
+                c = i.push.bind(i);
+            i.push = t, i = i.slice();
+            for (var f = 0; f < i.length; f++) t(i[f]);
+            var l = c;
+            r()
+        }([]);
+        //# sourceMappingURL=runtime.ef6a6612dd04ca643318.packaged.js.map
+    </script>
+
+    <script src="__STATIC__/index/js/common-head-desktop.48b5e3019e4c716fd208.packaged.js"></script>
+
+    <script src="__STATIC__/index/js/main-utilities.1c2ad8283800211c4f52.packaged.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/pdp.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="__STATIC__/index/css/magiczoomplus.css"/>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/ugc-list.css">
+
+    <script src="__STATIC__/index/js/magiczoomplus.5.2.4.js"></script>
+    <script src="__STATIC__/index/js/cw-tabs.b22e479425d88a68175e.packaged.js"></script>
+
+</head>
+
+<body class="bd-product-page">
+{include file="public/header" /}
+<main class="main-content">
+    <div id="vue-mount__sfw-page-product"></div>
+
+    <nav class="breadcrumbs container">
+        <ul>
+            <li itemprop="itemListElement">
+                <a href="/all_list/{$c1.id}" class="bc-link">
+                    <span itemprop="name">{$c1['cate_title']}</span>
+                </a>
+                <meta itemprop="position" content="1"/>
+            </li>
+            <li itemprop="itemListElement">
+                <a href="/goods_list/{$c2.id}" class="bc-link">
+                    <span itemprop="name">{$c2['cate_title']}</span>
+                </a>
+                <meta itemprop="position" content="2"/>
+            </li>
+            <li itemprop="itemListElement">
+                <a href="/goods_list2/{$c3.id}" class="bc-link">
+                    <span itemprop="name">{$c3['cate_title']}</span>
+                </a>
+                <meta itemprop="position" content="3"/>
+            </li>
+        </ul>
+    </nav>
+    <div itemscope itemtype="http://schema.org/Product">
+        <article id="product-container" class="">
+            <div class="product-top container ">
+
+                <section id="left-column " style="width: 45%;float: left;">
+                    <div id="imageblock-feature" class="has-media is-vertical">
+                        <div id="product-image">
+                            <!--<div class="mda-swap__overlay js-swap-overlay">
+                                <img src="">
+                            </div>-->
+                            <div class="product-image-zoomer">
+                                <a id="Zoomer" data-ga-action="product-thumbnails-zoom" data-ga-category="pdp"
+                                   data-ga-index="0" data-ga-media="photo" data-ga-type="thumbnail"
+                                   href="{$one['goods_logo']}"
+                                   class="MagicZoom"
+                                   title="" style="width: 320px;">
+                                    <img src="{$one['goods_logo']}" itemprop="image"/>
+                                </a>
+                                <!--<div class="pdp-video-container" data-wistia-vid="q6hi9u07ut">
+                                    <div class="wistia_responsive_padding"
+                                         style="padding:56.25% 0 0 0;position:relative;">
+                                        <div class="wistia_responsive_wrapper"
+                                             style="height:100%;left:0;position:absolute;top:0;width:100%;">
+                                            <div class="wistia_embed wistia_async_q6hi9u07ut popover=true preload=false popoverBorderWidth=10 popoverPreventScroll=false popoverCaptionContainer=vidcaption_q6hi9u07ut "
+                                                 style="display:inline-block;height:100%;width:100%"
+                                                 data-at-usage="VID1">Loading...
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>-->
+
+                                <!--<div id="vidcaption_q6hi9u07ut" class="wistia-popover-caption" style="display:none;">
+                                    <div class="wistia-popover-content">
+                                        <div class="wistia-popover-title truncate">蓝色水牛生活保护配方成人鸡肉和糙米配方干狗食品，30磅袋</div>
+                                        <a href="#" class="wistia-popover-close">&nbsp;</a>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>-->
+                            </div>
+                        </div>
+                        <div class="zoom-info"></div>
+                        <div id="media-selector" style="width: 10%;">
+                            <div>
+                                {php}$pic=explode("|",$one['goods_image']);{/php} {volist name="pic" id="p"}
+                                <a href="{$p}" data-zoom-id="Zoomer" data-image="{$p}"
+                                   data-ga-action="product-thumbnails" data-ga-category="pdp" data-ga-media="photo"
+                                   data-ga-type="thumbnail" class="main-img"
+                                   style="width: 100%;float: left;height: 100%;">
+                                    <img src="{$p}" alt="" style="width: 100%;margin-bottom: 30%;"/>
+                                </a>
+                                {/volist}
+                   
+                            </div>
+                        </div>
+                    </div>
+                    <div id="afterimageblock-feature" class="has-media">
+                        <div id="image-overlays">
+                        </div>
+                    </div>
+                </section>
+                <section id="right-column" style="width: 55%;">
+                    <div id="zoom-container"></div>
+                    <header>
+                        <div id="product-title">
+                            <h1>
+                                {$one.goods_title}</h1>
+                            <!--<div id="product-subtitle">-->
+                            <!--<a href="/s?rh=brand_facet%3ABlue+Buffalo">-->
+                            <!--蓝色水牛-->
+                            <!--</a>-->
+                            <!--</div>-->
+                        </div>
+                        <div class="product-header-extras">
+
+                            <div class="ugc ugc-head">
+
+                                <picture>
+
+                                    <img src="__STATIC__/index/picture/rating-{$one.star}.png" height="16" alt="">
+                                </picture>
+
+                                <a href="#ugc-section" class="hide-phone js-revScrollTo" data-ga-action="click"
+                                   data-ga-category="pdp-review" data-ga-label="review-anchor">
+
+                                    {$count}个评论
+
+                                </a>
+
+                                <span class="hide-large">{$count}</span>
+
+                            </div>
+
+                            <div class="js-pdp-header-qna">
+                            </div>
+                        </div>
+                    </header>
+                    <div class="buybox-wrapper">
+                        <div id="product-vitals">
+                            <div id="pricing">
+                                <ul class="product-pricing">
+                                    <li class="list-price">
+                                        <p class="title">
+                                            清单价格：</p>
+                                        <p class="price">
+                                            &yen;52.99</p>
+                                    </li>
+                                    <li class="our-price">
+                                        <p class="title">价格:</p>
+                                        <p class="price">
+                                            <span class="ga-eec__price">&yen;{$spec[0]['market_price']}</span>
+                                            <!--<span class="free-shipping plus49">免费1-2天<span>运费超过49美元</span></span>-->
+                                        </p>
+                                    </li>
+                                    <li class="you-save">
+                                        <p class="title">节省:</p>
+                                        <p class="price">
+                                            {php}$s1=$spec[0]['market_price']-$spec[0]['selling_price'];
+                                            $s2=($spec[0]['market_price']-$spec[0]['selling_price'])/$spec[0]['market_price'];
+                                            $s3=sprintf("%.2f",$s2)*100;
+                                            {/php}
+                                            ¥{$s1} ({$s3}%)
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="featured-promotions">
+                                <div class="promotion autoship-discount">
+                                    <div class="title">
+                                        <p>
+                                            <span class="icon"></span> 优惠价: <span></span>
+                                        </p>
+                                    </div>
+                                    <div class="value">
+                                        <p class="autoship-pricing">
+                                            ¥{$spec[0]['selling_price']}<span class="autoship-percent"></span>
+                                        </p>
+
+                                    </div>
+                                </div>
+
+                                <hr class="">
+                            </div>
+                            <div id="availability">
+
+                                <span class="available in-stock">有现货的</span>
+
+                            </div>
+                            <div id="sku-selector">
+
+                                <div id="variation-Size" class="variation variation--size variation-selector"
+                                     dim-id="400" dim-identifier="Size">
+                                    <div class="attribute-selection">
+                                        <label class="attribute-selection__name">尺寸:</label>
+                                        <span class="attribute-selection__value js-selection-value">{$spec[0]['goods_spec']}袋</span>
+                                        <input type="hidden" id="spec" value="{$spec[0]['id']}">
+                                    </div>
+                                    <ul class="variation-selector">
+                                        {volist name="spec" id="s"}
+                                        <li class="cw-btn cw-btn--soft cw-btn--narrow " data-id="{$s.id}"
+                                            data-market="{$s.market_price}" data-selling="{$s.selling_price}"
+                                            data-stock="{$s.goods_stock}" data-sale="{$s.goods_sale}"
+                                            data-title="{$s.goods_spec}">
+                                            <span>{$s.goods_spec}袋</span>
+                                        </li>
+                                        {/volist}
+                                    </ul>
+                                </div>
+                            </div>
+                            <script>
+                                $(function () {
+                                    $(".variation-selector").find("li").each(function () {
+                                        $(this).click(function () {
+                                            var id = $(this).data("id");
+                                            var market = $(this).data("market"); //市价
+                                            var selling = $(this).data("selling"); //卖价
+                                            var stock = $(this).data("stock"); //库存
+                                            var sale = $(this).data("sale"); //销售量
+                                            var title = $(this).data("title");
+                                            $(".ga-eec__price").html(market);
+                                            $("#spec").val(id);
+                                            $(".js-selection-value").html(title);
+                                            var u = (market - selling) / market * 100;
+                                            var u1 = u.toFixed(2);
+                                            var st = selling + "<span class=\"autoship-percent\">(节省额外的" + u1 + "%)</span>";
+                                            $(".autoship-pricing").html(st);
+                                        });
+                                    });
+                                });
+                            </script>
+                            <div class="rx-badges">
+
+                                <!--Rx Shipping Disclaimer Badge-->
+
+                                <!--Rx Restricted Availability Badge-->
+
+                                <!--Rx Refrigeration Badge-->
+
+                            </div>
+                        </div>
+                        <div id="buybox" class="">
+                            <div class="bordered">
+                                <div class="buybox__purchase">
+                                    <form method="get" action="/app/buy">
+                                        <div id="quantity-select">
+                                            <div class="field field--content buy-quantity--dropdown">
+                                                <label for="quantity">数量</label>
+                                                <div class="field__wrapper">
+                                                    <select name="quantity" id="quantity"
+                                                            class="ga-eec__quantity js-quantity-dropdown">
+                                                        {foreach [1,2,3,4,5,6,7,8,9,10,11,12] as $k=>$v}
+                                                        <option value="{$v}" {eq name="v" value="1"}selected="selected"{/eq}>{$v}</option>
+                                                        {/foreach}
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="buttons">
+                                            <input type="button" class="cw-btn cw-btn--action cw-btn--full add_cart"
+                                                   value="添加到购物车">
+                                        </div>
+                                        <script>
+                                            $(function () {
+                                                $(".add_cart").click(function () {
+                                                    var goods_id = "{$one.id}"; //产品
+                                                    var num = $("#quantity option:selected").val(); //数目
+                                                    var spec = $("#spec").val();
+                                                    $.post("/goods_do", {
+                                                        "goods_id": goods_id,
+                                                        "num": num,
+                                                        "spec": spec
+                                                    }, function (da) {
+                                                        var t = JSON.parse(da);
+                                                        switch (t.code) {
+                                                            case 1:
+                                                                layer.msg(t.msg);
+                                                                setTimeout(function () {
+                                                                    window.location.href = t.url;
+                                                                }, 666);
+                                                                break;
+                                                            case 2:
+                                                                layer.msg(t.msg);
+                                                                break;
+                                                            default:
+                                                                layer.msg(t.msg);
+                                                                break;
+                                                        }
+                                                    });
+                                                });
+                                            });
+                                        </script>
+                                        <div id="addToCartMessage"></div>
+                                        <div id="addToCartErrorMessage"></div>
+                                        <input type="hidden" name="productId" id="productId" value="28801"/>
+                                        <input type="hidden" name="itemId" id="itemId" value="32041"/>
+                                        <input name="dept" type="hidden" value=""/>
+
+                                </div>
+                                <div style="margin-top: 20px;overflow: hidden;padding-bottom: 20px;">
+                                    <img src="__STATIC__/index/img/{eq name='co' value='0'}guan.png{else /}ai.png{/eq}"
+                                         style="float: left;margin-left: 21%;width: 20px;height: 20px;cursor: pointer"
+                                         id="dian">
+                                    <span style="margin-left: 6px;color: #128CED;font-size: 16px;float: left;line-height: 20px;cursor: pointer"
+                                          id="tian">添加到收藏夹</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <script>
+                    $("#dian,#tian").click(function () {
+                        var gid = "{$one.id}";
+                        $.post("/favorite_do", {
+                            "gid": gid
+                        }, function (res) {
+                            var t = JSON.parse(res);
+                            console.log(t);
+                            switch (t.code) {
+                                case 1:
+                                    $("#dian").attr("src", "__STATIC__/index/img/ai.png");
+                                    layer.msg(t.msg);
+
+                                    break;
+                                case 2:
+                                    layer.msg(t.msg);
+                                    break;
+                                case 3:
+                                    layer.msg(t.msg);
+                                    break;
+                                default:
+                                    layer.msg(t.msg);
+                                    break;
+
+                            }
+                        });
+                    });
+                </script>
+            </div>
+            <section class="product-bottom">
+                <div class="product-bottom__promotions">
+                    <aside class="js-alternate">
+                        <div class="alternate ">
+                            <div class="container cw-carousel">
+                                <span class="cw-type__h3">您可能还喜欢</span>
+
+                                <ul class="cw-slider">
+                                    {volist name="favorite" id="f"}
+                                    <li class="">
+                                        <a href="/goods_detail/{$f.id}"
+                                           class="alternate__wrapper js-pdp-alternate cw-card" data-partnumber="109339"
+                                           data-parent-category="294">
+                                            <div class="alternate__column">
+                                                <img class="alternate__image"
+                                                     src="{$f.goods_logo}"
+                                                     alt="American Journey Chicken &amp; Brown Rice Recipe Dry Dog Food, 28-lb bag"/>
+                                                <div class="alternate__content">
+                                                    <div class="alternate__content--vertical">
+                                                        <h4>
+                                                            <span>American Journey</span>
+                                                            {$f.goods_title}</h4>
+
+                                                        <p class="alternate__price">
+                                                            ${$f.selling}</p>
+                                                        <div class="alternate__rating">
+                                                            <picture>
+                                                                <source type="image/svg+xml"
+                                                                        srcset="__STATIC__/index/fonts/rating-4_7.svg">
+                                                                <img src="__STATIC__/index/picture/rating-4_5_3.png">
+                                                            </picture>
+                                                            <span class="rating">{$f.package_sale}</span>
+                                                        </div>
+                                                        <p class="cw-pill cw-pill--success">
+                                                            立即购买</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    {/volist}
+                                </ul>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+                <section id="detailed-info" class="cw-tabs">
+
+                    <nav class="cw-tabs__head">
+                        <ul class="container">
+                            <li>
+                                <a href="#descriptions" data-ga-action="description:tab"
+                                   data-ga-category="pdp-extended-content" data-ga-label="46861"
+                                   data-tab-target="descriptions">描述</a>
+                            </li>
+
+                            <li>
+                                <a href="#Nutritional-Info" data-ga-action="nutritional-info:tab"
+                                   data-ga-category="pdp-extended-content" data-ga-label="46861"
+                                   data-tab-target="Nutritional-Info">营养信息</a>
+                            </li>
+                            <li>
+                                <a href="#Feeding-Instructions" data-ga-action="feeding-instructions:tab"
+                                   data-ga-category="pdp-extended-content" data-ga-label="46861"
+                                   data-tab-target="Feeding-Instructions">喂养指导</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="cw-tabs__body container">
+                        <article id="descriptions" data-tab-content="descriptions" class="cw-tabs__content">
+                            <span class="cw-type__h1">描述</span> {$one.goods_desc|raw} {$one.desc_left|raw}
+                        </article>
+
+                        <article id="Nutritional-Info" data-tab-content="Nutritional-Info" class="cw-tabs__content">
+                            <span class="cw-type__h1">营养信息</span> {$one.goods_content|raw} {$one.content_img|raw}
+                        </article>
+                        <article id="Feeding-Instructions" data-tab-content="Feeding-Instructions"
+                                 class="cw-tabs__content">
+                            <span class="cw-type__h1">喂养指导</span> {$one.illustrate|raw}
+                            <section class="cw-tabs__content--right">
+
+                            </section>
+                        </article>
+                    </div>
+                </section>
+                <div class="recommendations">
+                    <section class="container cw-product-list">
+                        <div id="vue-portal__cw-product-list" uid="pet-lovers-bought" renderer="cw-default-renderer"
+                             title="Pet Lovers Also Bought" template="prod_4"
+                             part-list="46861,46860,144073,46859,144072" list-name="pet-lovers-also-bought-pdp">
+                            >
+                        </div>
+                    </section>
+                </div>
+
+                <div id="pdp-cms-includes">
+
+                    <div id="" class="cms-include ">
+                        <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/pdp-extended.css">
+                        <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/pdp-premium.css">
+                        <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/blue-buffalo-pdp-premium.css">
+                        {$one.content_detail|raw}
+
+                        <!-- Full Width About Module -->
+
+                        <!-- END: Full Width About Module -->
+
+                    </div>
+                </div>
+                <div class="container">
+                    <meta itemprop="name"
+                          content="Blue Buffalo Life Protection Formula Adult Chicken &amp; Brown Rice Recipe Dry Dog Food, 30-lb bag"/>
+                    <meta itemprop="sku" content="46861"/>
+
+                </div>
+                <div class="js-ugc-qna--statistics"
+                     data-statistics="{&quot;numQuestions&quot;:31,&quot;numAnswers&quot;:41}">
+                </div>
+
+                <div id="ugc-qna" class="js-ugc-qna--pdp" data-sku-id="32041" data-part-number="45061">
+                </div>
+                <article class="ugc ugc-list ugc-list--pdp ugc-list--rev container" id="ugc-section"
+                         data-product-part-number="45061" data-sku-id="32041" data-user-id="-1002"
+                         data-statistics="{&quot;percentRecommended&quot;:96,&quot;numReviews&quot;:1554,&quot;avgRating&quot;:4.761300086975098}"
+                         data-include-pagination="false">
+
+                    <header class="ugc-list__header" itemprop="aggregateRating" itemscope
+                            itemtype="http://schema.org/AggregateRating">
+                        <span class="cw-type__h1">客户评论</span>
+                        <div class="ugc-list_星星">
+									<span class="ugc-list__header--星星">
+    <picture>
+        <!--<source type="image/svg+xml" srcset="__STATIC__/index/fonts/rating-4_7.svg">-->
+        <img src="__STATIC__/index/picture/rating-4_7_3.png">
+    </picture>
+</span>
+                            <span class="ugc-list__header--reviews ugc-list__header--reviews--pdp">
+            <a href="/blue-buffalo-life-protection-formula/product-reviews/32041?reviewSort=NEWEST&reviewFilter=ALL_星星&pageNumber=1"
+               class="js-read-all"><span itemprop="reviewCount">{$count}</span> 评论</a>
+									</span>
+                            <span class="ugc-list__header--reviews ugc-list__header--reviews--page">
+    <span itemprop="reviewCount">{$count}</span> 评论
+									</span>
+                            <span class="ugc-list__header--count">
+    5颗星星中的4.8颗
+									</span>
+                        </div>
+                    </header>
+                    <section class="ugc-list__recap">
+                        <div class="ugc-list__recap--left hide-phone">
+                            <ul class="progress-line progress-line--info js-星星Graph">
+                                <li>
+                                    <a href=""
+                                       class="js-change-filter" data-rating="5" data-filter="星星">
+                                        <span>5 星星</span>
+                                        <div class="progress-line__bg">
+                                            <span class="progress-line__fill" style="width: {$p5|default=0}%"></span>
+                                        </div>
+                                        <span>{$p5|default=0}%</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                       class="js-change-filter" data-rating="4" data-filter="星星">
+                                        <span>4 星星</span>
+                                        <div class="progress-line__bg">
+                                            <span class="progress-line__fill" style="width: {$p4|default=0}%"></span>
+                                        </div>
+                                        <span>{$p4|default=0}%</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                       class="js-change-filter" data-rating="3" data-filter="星星">
+                                        <span>3 星星</span>
+                                        <div class="progress-line__bg">
+                                            <span class="progress-line__fill" style="width: {$p3|default=0}%"></span>
+                                        </div>
+                                        <span>{$p3|default=0}%</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                       class="js-change-filter" data-rating="2" data-filter="星星">
+                                        <span>2 星星</span>
+                                        <div class="progress-line__bg">
+                                            <span class="progress-line__fill" style="width: {$p2|default=0}%"></span>
+                                        </div>
+                                        <span>{$p2|default=0}%</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                       class="js-change-filter" data-rating="1" data-filter="星星">
+                                        <span>1 星星</span>
+                                        <div class="progress-line__bg">
+                                            <span class="progress-line__fill" style="width: {$p1|default=0}%"></span>
+                                        </div>
+                                        <span>{$p1|default=0}%</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--<div class="ugc-list__recap&#45;&#45;right">-->
+                        <!--<div class="progress-radial-wrapper">-->
+                        <!--<div class="progress-radial" data-progress="97">-->
+                        <!--<div class="progress-radial__mask progress-radial__mask&#45;&#45;full">-->
+                        <!--<div class="progress-radial__fill"></div>-->
+                        <!--</div>-->
+                        <!--<div class="progress-radial__mask">-->
+                        <!--<div class="progress-radial__fill"></div>-->
+                        <!--<div class="progress-radial__fill progress-radial__fill&#45;&#45;fix"></div>-->
+                        <!--</div>-->
+                        <!--<div class="progress-radial__inset">-->
+                        <!--<p class="progress-radial__text">-->
+                        <!--<span class="progress-radial__text&#45;&#45;percent">97<sub>%</sub></span>-->
+                        <!--<span class="progress-radial__text&#45;&#45;desc">推荐</span>-->
+                        <!--</p>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="ugc-list__recap__recommend">-->
+                        <!--<p><span>97%</span>的推荐者推荐此产品</p>-->
+                        <!--<div class="ugc-list_星星 hide-large">-->
+                        <!--<span class="ugc-list__header&#45;&#45;星星">-->
+                        <!--<picture>-->
+                        <!--<source type="image/svg+xml" srcset="__STATIC__/index/fonts/rating-4_7.svg">-->
+                        <!--<img src="__STATIC__/index/picture/rating-4_7_3.png">-->
+                        <!--</picture>-->
+                        <!--</span>-->
+                        <!--<span class="ugc-list__header&#45;&#45;count">-->
+                        <!--4.8 / 5-->
+                        <!--</span>-->
+                        <!--</div>-->
+                        <!--<button href="/app/write-review?id=32041"-->
+                        <!--class="cw-btn cw-btn&#45;&#45;default js-writeReview">写评论-->
+                        <!--</button>-->
+                        <!--<p class="error">你已经看过这个项目了</p>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                    </section>
+                    <section class="ugc-list__content ugc-list__content--gallery cw-card">
+                        <div class="js-ajax-reviews ugc-list__reviews" id="ugc-list-content">
+                            <!--<header class="ugc-list__content__header ugc-list__content__header&#45;&#45;reviews">-->
+                            <!--<p class="ugc-list__content&#45;&#45;pagination">-->
+                            <!--显示1-10的1555评论-->
+                            <!--</p>-->
+                            <!--<div class="ugc-sort ugc-sort&#45;&#45;by">-->
+                            <!--<span class="hide-phone">按排序:</span>-->
+                            <!--<select class="js-sort-by" data-sort-by="MOST_RELEVANT">-->
+                            <!--<option value="MOST_RELEVANT" selected="selected">最相关</option>-->
+                            <!--<option value="NEWEST">最新</option>-->
+                            <!--<option value="TOP_CONTRIBUTOR">顶级贡献者</option>-->
+                            <!--<option value="FEATURED">重点书评</option>-->
+                            <!--<option value="OLDEST">最老的</option>-->
+                            <!--<option value="HIGHEST_RATING">最高评级</option>-->
+                            <!--<option value="LOWEST_RATING">最低评级</option>-->
+                            <!--<option value="PHOTOS">照片评论</option>-->
+                            <!--</select>-->
+                            <!--</div>-->
+                            <!--<div class="ugc-sort ugc-sort&#45;&#45;filter">-->
+                            <!--<span class="hide-phone">滤波器:</span>-->
+                            <!--<select class="js-filter-by" data-filter-by="ALL_星星">-->
+                            <!--<option value="ALL_星星" selected="selected">所有的星星</option>-->
+                            <!--<option value="RATING5">只有5颗星星</option>-->
+                            <!--<option value="RATING4">只有4颗星星</option>-->
+                            <!--<option value="RATING3">只有3颗星星</option>-->
+                            <!--<option value="RATING2">只有2颗星星</option>-->
+                            <!--<option value="RATING1">只有1颗星星</option>-->
+                            <!--<option value="POSITIVE">所有阳性</option>-->
+                            <!--<option value="NEGATIVE">所有关键</option>-->
+                            <!--</select>-->
+                            <!--</div>-->
+                            <!--</header>-->
+                            <div>
+                                <ul class="ugc-list__list ugc-rev__list js-ajax-reviews-list">
+                                    {volist name="comment" id="c"}
+                                    <li class="js-content" data-content-id="203997542" itemprop="review" itemscope
+                                        itemtype="http://schema.org/Review">
+                                        <header>
+                                            <h3 class="ugc__title">
+                                <span class="ugc-list__list__星星" itemprop="reviewRating" itemscope
+                                      itemtype="http://schema.org/Rating">
+                                    <meta itemprop="worstRating" content="1">
+                                    <meta itemprop="ratingValue" content="5">
+                                    <meta itemprop="bestRating" content="5">
+                                    <picture>
+
+                                        <img src="__STATIC__/index/picture/rating-{$c.star}_0.png">
+                                    </picture>
+                                </span>
+                                                <span itemprop="name">
+                                        {$c.title}</span>
+                                            </h3>
+                                            <p class="ugc__user">{$c.create_at}</p>
+                                        </header>
+                                        <section class="ugc-list__review">
+                                            <p class="ugc__content" itemprop="description">
+                                                <span class="ugc-list__review__display">{$c.content}</span>
+                                            </p>
+                                        </section>
+                                        <footer>
+                                            <a href="javascript:void(0)"
+                                               class="cw-btn cw-btn--white cw-btn--sm ugc__like js-like" rel="nofollow"
+                                               onclick="zan('{$c.id}')" {eq name="c.zan" value="2"
+                                               }style="background:#128ced" {/eq}>
+                                            {eq name="c.zan" value="1"}
+                                            <span>{$c.cou}</span>
+
+                                            <img src="__STATIC__/index/img/zan.png"
+                                                 style="width: 20px;height: 20px;"/>{else /}
+                                            <img src="__STATIC__/index/img/yzan.png"
+                                                 style="width: 20px;height: 20px;"/>{/eq}
+
+                                            </a>
+
+                                            <span class="thumb-up-confirm thumb-up-confirm--error js-liked-error">出了问题。请稍后再试。</span>
+                                            <!--<a href="javascript:void(0)" class="button&#45;&#45;report js-report" rel="nofollow"-->
+                                            <!--data-ga-action="report" data-ga-category="pdp-review"-->
+                                            <!--data-ga-label="click"-->
+                                            <!--data-target="/app/rest/feedback/REVIEW/203997542/report">-->
+                                            <!--<span>报告</span>-->
+                                            <!--<svg class="icon-report">-->
+                                            <!--<use xlink:href="#icon-report"></use>-->
+                                            <!--</svg>-->
+                                            <!--</a>-->
+                                        </footer>
+                                    </li>
+                                    {/volist}
+
+                                </ul>
+                                <aside class="ugc-loader js-ugc-loader">
+                                    <span class="cw-loader"></span>
+                                </aside>
+                            </div>
+
+                        </div>
+                    </section>
+                    <footer class="ugc-list__footer js-read-all">
+                        <a href="javascript:void (0)"
+                           class="cw-btn cw-btn--default">阅读所有{$count}篇评论</a>
+                    </footer>
+                </article>
+                <aside id="ugc-modal" class="cw-modal cw-modal-light">
+                    <div class="cw-modal-mask"></div>
+                    <div class="cw-modal-wrap">
+                        <div class="cw-modal-body">
+                            <header>
+                                <a href="#" class="cw-modal-close"></a>
+                            </header>
+                            <div class="cw-modal-content">
+                                <div class="cell">
+                                    <img src="" alt="" class="js-swap-image">
+                                    <p class="caption js-swap-caption"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+                <aside class="js-report-form" style="display: none">
+                    <form class="report-form">
+                        <div class="field">
+                            <textarea class="js-report-reason" name="review.feedback.reportReason" cols="30" rows="10"
+                                      placeholder="Describe the issue"></textarea>
+                            <div class="report-actions">
+                                <a href="#"
+                                   class="cw-btn cw-btn--action cw-btn--narrow cw-btn--half js-report-submit"><span>提交问题</span></a>
+                                <a href="#" class="cw-btn cw-btn--default cw-btn--narrow cw-btn--half js-report-cancel">取消</a>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="report report-confirm">
+								<span class="ugc-check"><svg class="icon-check"><use
+                                        xlink:href="#icon-check"></use></svg></span>
+                        <p>你的问题已经提交了。谢谢你的反馈.</p>
+                    </div>
+                    <div class="report report-error">
+								<span class="ugc-delete"><svg class="icon-delete"><use
+                                        xlink:href="#icon-delete"></use></svg></span>
+                        <p>出了什么问题…请稍后再试.</p>
+                    </div>
+                </aside>
+            </section>
+        </article>
+    </div>
+
+    <aside id="autoship-modal" class="cw-modal">
+        <div class="cw-modal-mask">
+        </div>
+        <div class="cw-modal-wrap">
+            <div class="cw-modal-body">
+                <header>
+                    <a href="#" class="cw-modal-close"></a>
+                </header>
+                <article class="cw-modal-content cw-modal-pad">
+
+                </article>
+            </div>
+        </div>
+    </aside>
+</main>
+
+<!--footer-->
+<div class="deferred-scripts">
+    <script src="__STATIC__/index/js/jquery.bxslider.4.2.12-ch.2.3.min.js"></script>
+
+    <script src="__STATIC__/index/js/vendors.9240aa73307e7b9149fd.packaged.js"></script>
+
+    <script src="__STATIC__/index/js/bootstrap.popover.3.3.7.min.js"></script>
+
+    <script src="__STATIC__/index/js/pdp-desktop.901479d2dd9ebc680dca.packaged.js"></script>
+    <!--视频-->
+
+    <!--<script type="text/javascript">-->
+    <!--var variationsItemMap = {-->
+    <!--"32039": [10754],-->
+    <!--"170938": [374141],-->
+    <!--"32040": [10755],-->
+    <!--"170939": [374142],-->
+    <!--"32041": [10756]-->
+    <!--}-->
+
+    <!--var itemData = {-->
+
+    <!--'32041': {-->
+    <!--canonicalURL: 'https://www.chewy.com/blue-buffalo-life-protection-formula/dp/32041',-->
+    <!--ajaxURL: '/app/dp/features?id=32041',-->
+    <!--sku: 46861,-->
+    <!--images: [-->
+    <!--'//img.chewy.com/is/image/catalog/46861_MAIN._AC_SL400_V1529603537_.jpg',-->
+
+    <!--'//img.chewy.com/is/image/catalog/46861_PT1._AC_SL320_V1529603538_.jpg',-->
+
+    <!--'//img.chewy.com/is/image/catalog/46861_PT2._AC_SL320_V1529603691_.jpg',-->
+
+    <!--'//img.chewy.com/is/image/catalog/46861_PT3._AC_SL320_V1529603539_.jpg',-->
+
+    <!--'//img.chewy.com/is/image/catalog/46861_PT4._AC_SL320_V1529603543_.jpg',-->
+
+    <!--'//img.chewy.com/is/image/catalog/46861_PT5._AC_SL320_V1529603694_.jpg',-->
+
+    <!--'//img.chewy.com/is/image/catalog/46861_PT6._AC_SL320_V1529603546_.jpg',-->
+    <!--],-->
+    <!--price: '$46.99'-->
+    <!--},-->
+    <!--'32040': {-->
+    <!--canonicalURL: 'https://www.chewy.com/blue-buffalo-life-protection-formula/dp/32040',-->
+    <!--ajaxURL: '/app/dp/features?id=32040',-->
+    <!--sku: 46860,-->
+    <!--images: [-->
+    <!--'//img.chewy.com/is/image/catalog/46860_MAIN._AC_SL400_V1529603687_.jpg',-->
+
+    <!--'//img.chewy.com/is/image/catalog/46860_PT1._AC_SL320_V1529603528_.jpg',-->
+
+    <!--'//img.chewy.com/is/image/catalog/46860_PT2._AC_SL320_V1529603529_.jpg',-->
+
+    <!--'//img.chewy.com/is/image/catalog/46860_PT3._AC_SL320_V1529603688_.jpg',-->
+
+    <!--'//img.chewy.com/is/image/catalog/46860_PT4._AC_SL320_V1529603532_.jpg',-->
+
+    <!--'//img.chewy.com/is/image/catalog/46860_PT5._AC_SL320_V1529603535_.jpg',-->
+
+    <!--'//img.chewy.com/is/image/catalog/46860_PT6._AC_SL320_V1529603690_.jpg',-->
+    <!--],-->
+    <!--price: '$27.99'-->
+    <!--},-->
+    <!--'170939': {-->
+    <!--canonicalURL: 'https://www.chewy.com/blue-buffalo-life-protection-formula/dp/170939',-->
+    <!--ajaxURL: '/app/dp/features?id=170939',-->
+    <!--sku: 144073,-->
+    <!--images: [-->
+    <!--'//img.chewy.com/is/image/catalog/144073_MAIN._AC_SL400_V1529604703_.jpg',-->
+
+    <!--'//img.chewy.com/is/image/catalog/144073_PT1._AC_SL320_V1529604705_.jpg',-->
+
+    <!--'//img.chewy.com/is/image/catalog/144073_PT2._AC_SL320_V1529604706_.jpg',-->
+
+    <!--'//img.chewy.com/is/image/catalog/144073_PT3._AC_SL320_V1529604708_.jpg',-->
+
+    <!--'//img.chewy.com/is/image/catalog/144073_PT4._AC_SL320_V1529604710_.jpg',-->
+
+    <!--'//img.chewy.com/is/image/catalog/144073_PT5._AC_SL320_V1529604713_.jpg',-->
+
+    <!--'//img.chewy.com/is/image/catalog/144073_PT6._AC_SL320_V1529604715_.jpg',-->
+    <!--],-->
+    <!--price: '$37.99'-->
+    <!--},-->
+    <!--'32039': {-->
+    <!--canonicalURL: 'https://www.chewy.com/blue-buffalo-life-protection-formula/dp/32039',-->
+    <!--ajaxURL: '/app/dp/features?id=32039',-->
+    <!--sku: 46859,-->
+    <!--images: [-->
+    <!--'//img.chewy.com/is/image/catalog/46859_MAIN._AC_SL400_V1529603519_.jpg',-->
+
+    <!--'//img.chewy.com/is/image/catalog/46859_PT1._AC_SL320_V1529603683_.jpg',-->
+
+    <!--'//img.chewy.com/is/image/catalog/46859_PT2._AC_SL320_V1529603520_.jpg',-->
+
+    <!--'//img.chewy.com/is/image/catalog/46859_PT3._AC_SL320_V1529603521_.jpg',-->
+
+    <!--'//img.chewy.com/is/image/catalog/46859_PT4._AC_SL320_V1529603685_.jpg',-->
+
+    <!--'//img.chewy.com/is/image/catalog/46859_PT5._AC_SL320_V1529603524_.jpg',-->
+
+    <!--'//img.chewy.com/is/image/catalog/46859_PT6._AC_SL320_V1529603526_.jpg',-->
+    <!--],-->
+    <!--price: '$14.99'-->
+    <!--},-->
+    <!--'170938': {-->
+    <!--canonicalURL: 'https://www.chewy.com/blue-buffalo-life-protection-formula/dp/170938',-->
+    <!--ajaxURL: '/app/dp/features?id=170938',-->
+    <!--sku: 144072,-->
+    <!--images: [-->
+    <!--'//img.chewy.com/is/image/catalog/144072_MAIN._AC_SL400_V1529604624_.jpg',-->
+
+    <!--'//img.chewy.com/is/image/catalog/144072_PT1._AC_SL320_V1529604667_.jpg',-->
+
+    <!--'//img.chewy.com/is/image/catalog/144072_PT2._AC_SL320_V1529604698_.jpg',-->
+
+    <!--'//img.chewy.com/is/image/catalog/144072_PT3._AC_SL320_V1529604668_.jpg',-->
+
+    <!--'//img.chewy.com/is/image/catalog/144072_PT4._AC_SL320_V1529604672_.jpg',-->
+
+    <!--'//img.chewy.com/is/image/catalog/144072_PT5._AC_SL320_V1529604610_.jpg',-->
+
+    <!--'//img.chewy.com/is/image/catalog/144072_PT6._AC_SL320_V1529604701_.jpg',-->
+    <!--],-->
+    <!--price: '$9.99'-->
+    <!--}-->
+    <!--};-->
+    <!--</script>-->
+    <script src="__STATIC__/index/js/e-v1.js" async></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="__STATIC__/layer/layer.js"></script>
+    <script>
+        document.body.style.overflowX = 'hidden';
+
+        function zan(id) {
+            $.post("/zan", {"id": id}, function (da) {
+                console.log(da);
+                var t = JSON.parse(da);
+                if (t.code == 1) {
+                    layer.msg(t.msg);
+                    setTimeout(function () {
+                        window.location.reload();
+                    }, 666);
+                } else if (t.code == 2) {
+                    layer.msg(t.msg);
+                    return;
+                }
+
+            });
+        }
+    </script>
+</div>
+
+</body>
+
+</html>

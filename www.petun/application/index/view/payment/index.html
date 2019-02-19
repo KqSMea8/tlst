@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>支付--{:sysconf('web_title')}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="keywords" content="{:sysconf('web_keys')}"/>
+    <meta name="description" content="{:sysconf('web_desc')}"/>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="__STATIC__/layer/layer.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .conzf {
+            width: 100%;
+            margin: 0 auto;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .conzf img {
+            width: 150px;
+            height: 150px;
+        }
+
+        .sys p {
+            font-size: 17px;
+            line-height: 55px;
+        }
+
+        .spbt {
+            color: #333;
+            font-size: 18px;
+            margin: 0;
+            padding-bottom: 0px;
+            overflow: hidden;
+        }
+
+        .sys {
+            color: #fff;
+            background-color: #D7892D;
+            overflow: hidden;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            padding: 10px;
+            width: 40%;
+            margin: 0 auto;
+            padding-left: 9%;
+        }
+
+        .sys img {
+            width: 50px;
+            height: 50px;
+            float: left;
+        }
+
+        .zfdiv {
+            overflow: hidden;
+            width: 40%;
+            margin: 0 auto;
+        }
+
+        .erweima {
+            width: 150px;
+            margin: 0 auto;
+            padding-bottom: 30px;
+        }
+
+        .spbtdiv {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .spbt {
+            overflow: hidden;
+            margin-bottom: 16px;
+        }
+
+        .spbt div {
+            float: left;
+            line-height: 24px;
+            font-size: 16px;
+        }
+
+        .yqts {
+            color: #939599;
+            width: 314px;
+            margin: 0 auto;
+            line-height: 30px;
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+
+        .jee {
+            overflow: hidden;
+            padding-bottom: 16px;
+            line-height: 30px;
+            width: 123px;
+            margin: 0 auto;
+        }
+
+        .txfk {
+            float: left;
+            color: #616761;
+        }
+
+        .topdiv {
+            overflow: hidden;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 22px;
+            width: 337px;
+            margin: 0 auto;
+        }
+
+        .topdiv img {
+            width: 30px;
+            height: 30px;
+            float: left;
+            margin-right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .zfdiv {
+                margin: 0 auto;
+                width: 92%;
+            }
+
+            .spbtdiv {
+                width: 100%;
+            }
+
+            .jee {
+                padding-left: 0;
+            }
+
+            .sys {
+                width: 92%;
+            }
+
+            .sys p {
+                font-size: 15px;
+            }
+
+            .txfk {
+                font-size: 19px;
+            }
+
+            .top img {
+                margin-right: 0;
+            }
+
+            .sys p {
+                line-height: 50px;
+            }
+
+        }
+    </style>
+</head>
+<body>
+{include file="public/header" /}
+<div class="conzf">
+    <div class="zfdiv">
+        <div class="topdiv" style="">
+            <img src="__STATIC__/index/img/duihao.png" style="" alt=""/>
+            <p class="txfk">您的订单提交成功,请尽快付款.</p>
+        </div>
+        <div class="spbtdiv">
+            <div class="spbt">
+                {volist name="goods" id="g"}
+                <div style="border-bottom: 1px dashed #ddd;margin-bottom: 10px;padding-top: 10px;padding-bottom: 10px;width: 100%;">
+                    <div style="float: left;    width: 15%;">
+                        <img src="http://pet.dongyaods.com/static/upload/c879086a269029d9/1b3d749ac56ed559.jpg"
+                             style="width: 50px;height: 50px;" alt=""/></div>
+                    <div style="float: left;    width: 85%;">{$g.goods_title}<br>{$g.goods_spec}
+                        <br>{$g.selling_price}×{$g.num}
+                    </div>
+                </div>
+                {/volist}
+            </div>
+            <div class="spbt">
+                <div style="font-size: 18px;float: left;">购买时间：</div>
+                <div style="float: left;">
+                    <div>{$order.create_at}</div>
+                </div>
+            </div>
+        </div>
+        {if !request()->isMobile()}
+        <div class="erweima">
+            <img src="{$src}" alt=""/>
+        </div>
+        {/if}
+
+        <div class="jee">
+            <img src="__STATIC__/index/img/wx.png" style="width:30px;height:30px;float: left;margin-right: 6px;"
+                 alt=""/>
+            <span style="float: left;color: #50B674;font-size: 18px;">&yen;{$order.pay_price}元</span>
+        </div>
+        <div class="yqts">请在24小时内完成支付,否则订单会自动取消.</div>
+    </div>
+    {if request()->isMobile()}
+    <div class="sys pay" onclick="pay_do()">
+    	<div style="width: 48%;margin: 0 auto;">
+    	<img src="__STATIC__/index/img/smzf.png" alt=""/>
+        <p>&nbsp;&nbsp;微信支付</p></div>
+        </div>
+    {else /}
+    <div class="sys"><img src="__STATIC__/index/img/smzf.png" alt=""/>
+        <p>&nbsp;&nbsp;可扫一扫识别图片二维码支付</p></div>
+    {/if}
+
+</div>
+</body>
+</html>
+<script>
+
+
+pushHistory();
+window.addEventListener("popstate", function (e) {
+        
+		var url = "" + document.location + "";
+		layer.confirm('确定不付款吗？', {
+			closeBtn:0,
+			btn: ['确定', '取消'] //按钮
+		}, function() {
+			window.open('https://www.petun.cn/order_list');
+			return true;
+		}, function() {
+			history.pushState("x-back", null, location.href);
+	        return true;
+		}
+		);
+		
+}, false);
+
+    function pushHistory() {
+        var state = {
+            title: "title",
+            url: "#"
+        };
+        window.history.pushState(state, "title", "#");
+    }
+
+    var a = null;
+
+    a = setInterval(function () {
+        check_status();
+    }, 666);
+
+    function pay_do() {
+        $.post("{:url('Payment/h5_pay')}", {"oid": "{$order.id}"}, function (da) {
+            switch (da.code) {
+                case 1:
+                    layer.msg(da.msg);
+                    setTimeout(function () {
+                        window.location.href = da.url;
+                    }, 666);
+                    break;
+                case 2:
+                    layer.open({
+                        content: da.error
+                        , skin: 'msg'
+                        , time: 2 //2秒后自动关闭
+                    });
+                    break;
+                case 3:
+                    layer.open({
+                        content: da.msg
+                        , skin: 'msg'
+                        , time: 2 //2秒后自动关闭
+                    });
+                    break;
+                case 4:
+                    layer.open({
+                        content: da.msg
+                        , skin: 'msg'
+                        , time: 2 //2秒后自动关闭
+                    });
+                    break;
+                default:
+
+
+            }
+
+        });
+    }
+
+    function check_status() {
+        $.post("{:url('Payment/check_status')}", {"oid": "{$order.id}"}, function (data) {
+            if (data.code == 1) {
+                clearInterval(a);
+                layer.msg("支付成功");
+                setTimeout(function () {
+                    window.location.href = data.url;
+                }, 666);
+            }
+        });
+    }
+</script>

@@ -1,0 +1,27 @@
+{php}$video=db("store_video")->field("id,title")->where(["is_deleted"=>0,"is_top"=>2])->limit(5)->select();{/php}
+<div class="hasBorder mdxy mb-40 mdxy2">
+    <div class="c-Title mb-20">
+        <a href="//my.pclady.com.cn/" target="_blank"><span>Q宠小课堂</span></a>
+    </div>
+    <div class="pics mb-15">
+        {php}$one=db("store_video")->field("id,title,pic")->where(["is_deleted"=>0,"is_top"=>2])->order("id desc")->limit(1)->find();{/php}
+        <ul class="clearfix">
+            <li>
+                <a href="/en_detail/{$one.id}" class="aniTit little">
+                    <img width="270" height="200" src="{$one.pic}" alt="{$one.title}">
+                    <span class="title-alpha fs-16">{$one.title}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="txt-list">
+        <ul>
+            {volist name="video" id="vv"}
+            <li>
+                <a href="/en_detail/{$vv.id}" target="_blank">{$vv.title}</a>
+            </li>
+            {/volist}
+
+        </ul>
+    </div>
+</div>

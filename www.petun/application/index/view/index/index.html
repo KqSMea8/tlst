@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en" class="cw-desktop">
+
+	<head>
+		<title>首页--{:sysconf('web_title')}</title>
+		<meta name="apple-mobile-web-app-title" content="Chewy.com">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="description" content="{:sysconf('web_desc')}" />
+		<meta name="keywords" content="{:sysconf('web_keys')}" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<!--<link rel="stylesheet" type="text/css" href="/static/index/css/main.28a01aac1aabbabda00d.css">-->
+		<style type="text/css">
+			@media screen and ( max-width: 650px ) {
+				.cw-logo img{margin-left: -14% !important;}
+				.footer-copyright__container__rx li{width: 53% !important;}
+			}
+			.video_Son {
+				width: 100%;
+				height: 220px;
+				/*background-color: red;*/
+				margin: -10px 0px 0px 0px !important;
+			}
+			
+			.video_SonTop {
+				width: 100%;
+				height: 170px;
+				/*background-color: blue;*/
+			}
+			
+			.video_SonTop img {
+				width: 100% !important;
+				height: 100%;
+			}
+			
+			.video_SonBottom {
+				width: 100%;
+				height: 50px;
+				margin-top: -10px;
+			}
+			
+			.video_SonBottom>p {
+				padding-top: 15px !important;
+				color: #198FED !important;
+			}
+			
+			.play-img {
+				width: 80px;
+				height: 80px;
+				position: absolute;
+				top: 45%;
+				left: 50%;
+				margin: -40px 0 0 -40px;
+				display: block;
+				background-color: rgba(0, 0, 0, .5);
+				box-shadow: 0 0 0 2px #fff;
+				border-radius: 50%;
+				transition: all .4s ease;
+				-webkit-transform: scale(.8);
+				transform: scale(.8);
+				box-shadow: 0px 0px 30px #CCC;
+			}
+			
+			.triangle {
+				width: 0;
+				height: 0;
+				border: 20px solid red;
+				border-top-color: #FFF;
+				border-bottom: none;
+				border-left-color: transparent;
+				border-right-color: transparent;
+				position: relative;
+				top: 31px;
+				left: 5px;
+				transform: rotate(270deg) !important;
+				display: inline-block;
+			}
+			/* 轮播图片大小 */
+			
+			.img_Max {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.newsimg {
+				width: 140px !important;
+				height: 160px !important;
+			}
+			
+			.tuijian_Img {
+				width: 120px !important;
+				height: 120px !important;
+			}
+		</style>
+		<!--<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>-->
+
+		<!--轮播-->
+		<script type="text/javascript">
+			! function(e) {
+				function t(t) {
+					for(var n, a, i = t[0], c = t[1], f = t[2], p = 0, s = []; p < i.length; p++) a = i[p], o[a] && s.push(o[a][0]), o[a] = 0;
+					for(n in c) Object.prototype.hasOwnProperty.call(c, n) && (e[n] = c[n]);
+					for(l && l(t); s.length;) s.shift()();
+					return u.push.apply(u, f || []), r()
+				}
+
+				function r() {
+					for(var e, t = 0; t < u.length; t++) {
+						for(var r = u[t], n = !0, i = 1; i < r.length; i++) {
+							var c = r[i];
+							0 !== o[c] && (n = !1)
+						}
+						n && (u.splice(t--, 1), e = a(a.s = r[0]))
+					}
+					return e
+				}
+
+				var n = {},
+					o = {
+						0: 0
+					},
+					u = [];
+
+				function a(t) {
+					if(n[t]) return n[t].exports;
+					var r = n[t] = {
+						i: t,
+						l: !1,
+						exports: {}
+					};
+					return e[t].call(r.exports, r, r.exports, a), r.l = !0, r.exports
+				}
+
+				a.e = function(e) {
+					var t = [],
+						r = o[e];
+					if(0 !== r)
+						if(r) t.push(r[2]);
+						else {
+							var n = new Promise(function(t, n) {
+								r = o[e] = [t, n]
+							});
+							t.push(r[2] = n);
+							var u, i = document.getElementsByTagName("head")[0],
+								c = document.createElement("script");
+							c.charset = "utf-8", c.timeout = 120, a.nc && c.setAttribute("nonce", a.nc), c.src = function(e) {
+								return a.p + "" + ({
+									1: "vendors"
+								}[e] || e) + "." + {
+									1: "772274427a0548f292bd",
+									71: "d1dd419292b2f863cc02",
+									72: "250bc1c72a644f6e2136",
+									73: "76cc600591757795b379",
+									74: "74d436895459a9603e5b",
+									75: "d4d14043e757f8c1bf89",
+									76: "fab03b4c3d68a13be0a3"
+								}[e] + ".packaged.js"
+							}(e), u = function(t) {
+								c.onerror = c.onload = null, clearTimeout(f);
+								var r = o[e];
+								if(0 !== r) {
+									if(r) {
+										var n = t && ("load" === t.type ? "missing" : t.type),
+											u = t && t.target && t.target.src,
+											a = new Error("Loading chunk " + e + " failed.\n(" + n + ": " + u + ")");
+										a.type = n, a.request = u, r[1](a)
+									}
+									o[e] = void 0
+								}
+							};
+							var f = setTimeout(function() {
+								u({
+									type: "timeout",
+									target: c
+								})
+							}, 12e4);
+							c.onerror = c.onload = u, i.appendChild(c)
+						}
+					return Promise.all(t)
+				}, a.m = e, a.c = n, a.d = function(e, t, r) {
+					a.o(e, t) || Object.defineProperty(e, t, {
+						enumerable: !0,
+						get: r
+					})
+				}, a.r = function(e) {
+					"undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, {
+						value: "Module"
+					}), Object.defineProperty(e, "__esModule", {
+						value: !0
+					})
+				}, a.t = function(e, t) {
+					if(1 & t && (e = a(e)), 8 & t) return e;
+					if(4 & t && "object" == typeof e && e && e.__esModule) return e;
+					var r = Object.create(null);
+					if(a.r(r), Object.defineProperty(r, "default", {
+							enumerable: !0,
+							value: e
+						}), 2 & t && "string" != typeof e)
+						for(var n in e) a.d(r, n, function(t) {
+							return e[t]
+						}.bind(null, n));
+					return r
+				}, a.n = function(e) {
+					var t = e && e.__esModule ? function() {
+						return e.default
+					} : function() {
+						return e
+					};
+					return a.d(t, "a", t), t
+				}, a.o = function(e, t) {
+					return Object.prototype.hasOwnProperty.call(e, t)
+				}, a.p = "", a.oe = function(e) {
+					throw console.error(e), e
+				}, Object.defineProperty(a, "p", {
+					get: function() {
+						return "/assets/js/"
+					}
+				});
+				var i = window.webpackJsonp = window.webpackJsonp || [],
+					c = i.push.bind(i);
+				i.push = t, i = i.slice();
+				for(var f = 0; f < i.length; f++) t(i[f]);
+				var l = c;
+				r()
+			}([]);
+			//# sourceMappingURL=runtime.3980c1c4b1d9dbec2329.packaged.js.map
+		</script>
+
+		<!--<script src="__STATIC__/index/js/common-head-desktop.4140dc87be02600e98c5.packaged.js"></script>
+		<script src="__STATIC__/index/js/main-utilities.1c2ad8283800211c4f52.packaged.js"></script>-->
+		<!--多个效果-->
+		<link rel="stylesheet" type="text/css" href="__STATIC__/index/css/home.fb9a627bb1d3c7e96163.css">
+		<link rel="stylesheet" type="text/css" href="__STATIC__/index/css/homepage-hero-carousel-v2.css">
+	</head>
+
+	<body class="bd-home">
+		<script>
+			(function(w, d, s, l, i) {
+				w[l] = w[l] || [];
+				w[l].push({
+					'gtm.start': new Date().getTime(),
+					event: 'gtm.js'
+				});
+				var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s),
+					dl = l != 'dataLayer' ? '&l=' + l : '';
+				j.async = true;
+				j.src =
+					'//www.googletagmanager.com/gtm.js?id=' + i + dl;
+				f.parentNode.insertBefore(j, f);
+			})(window, document, 'script', 'dataLayer', 'GTM-5X325N');
+		</script>
+		<!-- End Google Tag Manager -->
+		{include file="public/header" /}
+
+		<div data-cms-uid="hp-hero-10" class="cms-include ">
+
+			<section class="cw-hero js-home-carousel">
+				<ul class="cw-slider cw-hero-slider js-draggable-on-desktop">
+					{volist name="banner" id="b"}
+					<li class="cw-slide autoship-and-save-version-3d" data-promo-creative="autoship-test-version-3.D">
+						<a href="{$b.burl}">
+							<img class="img_Max" src="{$b.bpath}" />
+						</a>
+					</li>
+					{/volist}
+				</ul>
+			</section>
+
+		</div>
+		<main class="main-content">
+			<div id="vue-mount__sfw-page-home"></div>
+			<div class="container">
+				<section class="puppy-kitten">
+					<a href="{:url('Encyclopedias/index')}?zid=1">
+					<div class="puppy-kitten-img-left">
+						<img src="__STATIC__/index/img/products.20181005.jpg" />
+					</div>
+					</a>
+					<div class="puppy-kitten-content">
+						<h2 class="home-head">新小狗还是小猫?</h2>
+						<p>找到所有你需要欢迎他们回家!</p>
+						<a href="{:url('Encyclopedias/index')}">所有百科+</a>
+						
+					</div>
+					<a href="{:url('Encyclopedias/index')}?zid=2">
+					<div class="puppy-kitten-img-right">
+						<img src="__STATIC__/index/img/puppy-kitten.jpg" />
+					</div>
+					</a>
+				</section>
+				<article class="home-cta-carousels">
+					<section class="cw-slider cw-home-carrousel autoship-brands js-autoship-brands-carousel js-draggable-on-desktop" data-ga-label="home-carousel-autoship-brands">
+						<h2 class="home-head js-banner" data-promo-creative="shop-all-link" data-position="13">
+                    <a href="/introduce/1">推荐产品<span class="view-all">商店所有 > </span></a>
+                    <!--<a href="#">推荐产品</a>-->
+                </h2>
+						<ul>
+							{volist name="intro" id="ir"}
+							<li class="js-banner" data-promo-creative="hills" data-position="1">
+								<a href="goods_detail/{$ir.id}">
+									<div class="carrousel-img">
+										<img src="{$ir.goods_logo}" alt="">
+									</div>
+									<p>{if (request()->isMobile())}{$ir.abbreviation}{else /}{$ir.goods_title}{/if}</p>
+								</a>
+							</li>
+							{/volist}
+						</ul>
+					</section>
+
+					<section class="cw-slider cw-home-carrousel top-rated-brands js-top-brands-carousel" data-ga-label="home-carousel-top-rated-brands">
+						<h2 class="home-head js-banner" data-promo-creative="shop-all-link" data-position="11">
+                    <a href="#">推荐品牌</a>
+                </h2>
+						<ul class="js-draggable-on-desktop">
+							{volist name="brand" id="b"}
+							<li class="js-banner" data-promo-creative="blue-buffalo" data-position="1">
+								<a href="goods_list3/{$b.id}">
+									<div class="carrousel-img">
+										<img src="{$b.brand_logo}" class="tuijian_Img" alt="Blue Buffalo">
+									</div>
+									<div class="cw-stars">
+										<picture>
+											<img src="__STATIC__/index/img/rating-5_0.png">
+										</picture>
+									</div>
+									<p>{$b.brand_title}</p>
+								</a>
+							</li>
+							{/volist}
+						</ul>
+					</section>
+
+					<!--  热销产品  -->
+
+					<section class="cw-slider cw-home-carrousel top-rated-brands js-top-brands-carousel" data-ga-label="home-carousel-top-rated-brands">
+						<h2 class="home-head js-banner" data-promo-creative="shop-all-link" data-position="11"><a
+                        href="/hot_goods/1">热销产品<span class="view-all">商店所有 > </span></a></h2>
+						<ul class="js-draggable-on-desktop">
+							{volist name="hot" id="h"}
+							<li class="js-banner" data-promo-creative="blue-buffalo" data-position="1">
+								<a href="/goods_detail/{$h.id}">
+									<div class="carrousel-img">
+										<img src="{$h.goods_logo}" class="tuijian_Img" alt="Blue Buffalo">
+									</div>
+									<p class="cont_P">{if (request()->isMobile())}{$h.abbreviation}{else /}{$h.goods_title}{/if}</p>
+								</a>
+							</li>
+							{/volist}
+
+						</ul>
+					</section>
+
+					<!--  热销产品
+
+
+
+           <!--  
+
+           <section class="cw-slider cw-home-carrousel customer-favorites js-customer-favorites-carousel"  data-ga-label="home-customer-favorites">
+
+                <h2 class="home-head"><a href="/hot_goods/1">热销产品<span class="view-all">商店所有</span></a></h2>
+                <ul>
+                    {volist name="hot" id="h"}
+                    <li class="js-banner" data-promo-creative="wet-food-1840" data-position="1">
+                        <a href="/goods_detail/{$h.id}">
+                            <div class="carrousel-img">
+                                <img class="newsimg" src="{$h.goods_logo}" alt="Wet Food">
+                            </div>
+                            <p>{$h.goods_title}</p>
+                        </a>
+                    </li>
+                    {/volist}
+                </ul>
+            </section> -->
+
+					<!--  热销产品  -->
+					<!--  热销产品  -->
+
+					<div class="">
+
+						{if (request()->isMobile())}
+						<!-- 视频央视 -->
+						<div class="cw-slider cw-home-carrousel watch-learn">
+							<h2 class="home-head"><a>观察和学习</a></h2> {php}$video=db("store_video")->where(["is_top"=>2])->select();{/php}
+							<ul class="watch-learn__list js-draggable-on-desktop">
+								{volist name="video" id="vv"}
+
+								<!--  循环遍历  -->
+
+								<li class="cw-card cw-card-hover" style="position: absolute; width: 100%;">
+									<div class="video_Son">
+										<video src="{$vv.url}" controls="controls" style="width: 100%;height: 170px;position: absolute;left: 0px;" poster="{$vv.pic}">
+
+										</video>
+
+										<div class="video_SonBottom">
+											<p class="" style="">{$vv.title}</p>
+										</div>
+
+									</div>
+								</li>
+
+								<!--  循环遍历  -->
+
+								{/volist}
+							</ul>
+						</div>
+						<!-- 视频央视 -->
+
+						{else /}
+						<!-- 视频央视 -->
+						<div class="cw-slider cw-home-carrousel watch-learn">
+							<h2 class="home-head"><a>观察和学习</a></h2> {php}$video=db("store_video")->where(["is_top"=>2])->select();{/php}
+							<ul class="watch-learn__list js-draggable-on-desktop">
+								{volist name="video" id="vv"}
+
+								<!--  循环遍历  -->
+
+								<li class="cw-card cw-card-hover" style="position: absolute; width: 100%;" onclick="open_video('{$vv.id}')">
+									<div class="video_Son">
+										<!--  <video src="{$vv.url}" controls="controls" style="width: 100%;height: 170px;position: absolute;left: 0px;"  poster="{$vv.pic}">
+
+                                </video> -->
+										<!--<img src="__STATIC__/index/img/is-there-an-easy-way-to-feed-my-dog-a-raw-diet.jpg" alt="Is there an easy way to feed my dog a raw diet?">
+                                -->
+										<!--<span class="video-play trigger-video"></span>-->
+
+										<div class="video_SonTop">
+											<img src="{$vv.pic}" alt="">
+											<span class="play-img"><i class="triangle"></i></span>
+										</div>
+
+										<div class="video_SonBottom">
+											<p class="" style="padding-top: 0px;">{$vv.title}</p>
+										</div>
+
+										<!--<a class="cw-home-alt" style="padding-top: 30px;">车间冻干</a>-->
+									</div>
+								</li>
+
+								<!--  循环遍历  -->
+
+								{/volist}
+							</ul>
+						</div>
+						<!-- 视频央视 -->
+						{/if}
+
+					</div>
+					{php}$img=db("store_banner")->where(["bname"=>"首页底部"])->value("bpath");{/php}
+					<img src="{$img}" style="width: 100%;" />
+				</article>
+
+			</div>
+		</main>
+
+		{include file="public/foot" /}
+		<div class="deferred-scripts">
+			<script src="__STATIC__/index/js/jquery.bxslider.4.2.12-ch.2.3.min.js"></script>
+			<!--轮播-->
+			<!--<script src="__STATIC__/index/js/vendors.772274427a0548f292bd.packaged.js"></script>
+			<script src="__STATIC__/index/js/common-desktop.3343a2f0d2a89f28932a.packaged.js"></script>-->
+			<!--宠物店-->
+			<script src="__STATIC__/index/js/d-home.ff919b5023cae93d0507.packaged.js"></script>
+			<!--多个效果-->
+			<script src="__STATIC__/index/js/e-v1.js" async></script>
+			<!--视频-->
+		</div>
+
+	</body>
+
+</html>
+<script src="__STATIC__/layer/layer.js"></script>
+<script>
+	function open_video(vid) {
+		layer.open({
+			type: 2,
+			title: false,
+			area: ['1200px', '550px'],
+			fixed: false, //不固定
+			maxmin: true,
+			content: '/video/' + vid
+		});
+	}
+</script>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" class="cw-desktop">
+
+<head>
+    <title>地址编辑--{:sysconf('web_title')}</title>
+    <meta name="apple-mobile-web-app-title" content="Chewy.com">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="{:sysconf('web_keys')}"/>
+    <meta name="description" content="{:sysconf('web_desc')}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/main.9cd1cb456dc1b2580fab.css">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/account.7fbd0e4863cfd82e8041.css">
+    <link href="__STATIC__/index/css/bootstrap-3.3.4.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="__STATIC__/layer/layer.js"></script>
+
+
+    <script type="text/javascript" src="__STATIC__/index/js/jquery.cityselect.js"></script>
+
+</head>
+
+<body class="bd-account bd-sub-nav bd-addressbook">
+{include file="public/header" /}
+<div id="container">
+    <section class="account-section">
+        <div class="container">
+            <div style="width: 430; margin: 0 auto;">
+                <div id="breadcrumbs">
+                    <a href="/app/account">账户</a> &#8250;
+                    <a href="/app/account/addressbook">地址</a> &#8250;
+                    <span>编辑地址</span>
+                </div>
+                <h1>编辑地址</h1>
+                <form method="post" action="" id="address-book" class="address-form">
+                    <ol style="padding: 0;">
+                        <li class="field">
+                            <label for="address.fullName">姓名</label>
+                            <div class="field__wrapper">
+                                <input size="40" maxlength="35" name="username" id="fullName" type="text"
+                                       class="field__input" value="{$address.username|default=''}"/></div>
+                        </li>
+                        <li>
+                            <div id="distpicker3">
+                                <div class="form-group">
+                                    <label class="sr-only" for="province6">Province</label>
+                                    <select class="form-control" id="province6"></select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="city6">City</label>
+                                    <select class="form-control" id="city6"></select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="district6">District</label>
+                                    <select class="form-control" id="area6"></select>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="field">
+                            <label for="address.street1">街道地址</label>
+                            <div class="field__wrapper">
+                                <input size="40" maxlength="35" name="address" id="detail" type="text"
+                                       class="field__input js-address" value="{$address.address|default=" "}"/>
+                            </div>
+                        </li>
+                        <li class="field field--zip">
+                            <label for="address.postcode">邮政编码</label>
+                            <div class="field__wrapper">
+                                <input size="10" name="postcode" id="postcode" type="text" class="field__input"/></div>
+                        </li>
+                        <li class="field--phone-wrap">
+                            <div class="field field--phone">
+                                <label for="address.phone1">电话</label>
+                                <div class="field__wrapper">
+                                    <input size="40" name="phone" id="phone" type="text"
+                                           class="field__input field__input--phone" value="{$address.phone|default="
+                                    "}"/>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="field foption primary">
+                            <div class="label-choice">
+                                <input name="address.primaryAddress" id="address.primaryAddress" type="checkbox"
+                                       class="field__checkbox" value="true"/><label for="address.primaryAddress">把它作为我的主要地址</label>
+                            </div>
+                        </li>
+                    </ol>
+                    <div class="buttons">
+                        <input type="button" value="修改地址" class="cw-btn cw-btn--action add" {eq name="aid" value="0"
+                               }data-aj="1" {else /}data-aj="2" {/eq}/>
+                        <a class="cw-btn cw-btn--default" href="/app/account/addressbook">取消</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!--footer-->
+</div>
+
+<script>
+
+</script>
+<script>
+
+    $(function () {
+        $(".add").click(function () {
+            var aj = $(this).data("aj");
+            if (aj == 1) {
+                var ajax = "add";
+                var aid = 0;
+            } else if (aj == 2) {
+                var ajax = "edit";
+                var aid = "{$aid}";
+            }
+
+            $.post("/add_address", {
+                "ajax": ajax,
+                "username": $("#fullName").val(),
+                "province": $("#province").val(),
+                "city": $("#city").val(),
+                "area": $("#area").val(),
+                "address": $("#detail").val(),
+                "phone": $("#phone").val(),
+                "aid": aid,
+            }, function (data) {
+                var t = JSON.parse(data);
+                switch (t.code) {
+                    case 1:
+                        layer.msg(t.msg);
+                        setTimeout(function () {
+                            window.location.href = "/address_list";
+                        }, 666);
+                        break;
+                    case 2:
+                        layer.msg(t.msg);
+                        break;
+                    default:
+                        layer.msg(t.msg);
+
+                }
+            });
+        });
+    });
+</script>
+
+<script src="__STATIC__/index/js/distpicker.data.js"></script>
+<script src="__STATIC__/index/js/distpicker.js"></script>
+<script src="__STATIC__/index/js/main.js"></script>
+</body>
+
+</html>
+<script>
+    document.getElementById('province').value = "{$address.province|default=''}";
+    document.getElementById('city').value = "{$address.city|default=''}";
+    document.getElementById('area').value = "{$address.area|default=''}";
+</script>

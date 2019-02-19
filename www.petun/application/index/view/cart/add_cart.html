@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" class="cw-desktop">
+
+<head>
+    <title>购物车--{:sysconf('web_title')}</title>
+    <meta name="apple-mobile-web-app-title" content="Chewy.com">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="{:sysconf('web_desc')}"/>
+    <meta name="keys" content="{:sysconf('web_keys')}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/main.9cd1cb456dc1b2580fab.css">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/cart.883a7861aafbcefe5941.css">
+    <style>
+        @media (max-width: 768px) {
+            #cart .cart-right {
+                width: 100%;
+                margin-top: 30px;
+            }
+
+            #cart .cart-left {
+                width: 100%;
+                padding-right: 0;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .main-content {
+                width: 90% !important;
+            }
+        }
+    </style>
+</head>
+<body class="bd-cart cart-full">
+{include file="public/header" /}
+<main class="main-content">
+    <article>
+        <div class="container">
+            <form method="post" action="/add_order">
+                <header class="cart-header">
+                    <h1>你的购物车</h1>
+                </header>
+                <div id="cart">
+                    <section class="cart-left">
+                        <div class="cw-card">
+                            <ul>
+                                {volist name="cart" id="c"}
+                                <li class="ga-eec--34247">
+                                    <input type="checkbox" name="cid[]" id="" onclick="sum($(this))" value="{$c.id}"
+                                           class="sum"
+                                           data-total="{$c.total}" style="float: left;margin-right: 16px;">
+                                    <div class="thumbnail">
+                                        <a href="">
+                                            <img src="{$c.goods_logo}"
+                                                 alt="Taste of the Wild High Prairie Grain-Free Dry Dog Food, 30-lb bag"/>
+                                        </a>
+                                    </div>
+                                    <div class="quantity">
+                                        <a href="#" class="remove js-remove-from-cart"
+                                           onclick="cart_del('{$c.id}')">Remove</a>
+                                        <input size="2" type="text" class="amount"
+                                               value="{$c.num}"/>
+                                        <input type="button" name="update" value="更新" class="update" data-num="{$c.num}"
+                                               data-id="{$c.id}"/>
+                                    </div>
+                                    <div class="item">
+                                        <p class="name">
+                                            <a href="">
+                                                {$c.goods_title}</a>
+                                        </p>
+                                        <span class="sku">SKU: 49066</span>
+                                        <span class="price">
+                                                                ¥{$c.selling_price}</span>
+                                        <div class="featured-promotion">
+                                            <p class="discount ans-logo-label"><span class="red">Autoship &amp; Save - 结账时可</span>享受5折优惠
+                                            </p>
+                                        </div>
+                                        <p class="available in-stock">In stock</p>
+                                    </div>
+                                </li>
+                                {/volist}
+                            </ul>
+                        </div>
+                    </section>
+                    <section class="cart-right ">
+                        <div class="cw-card stick-box">
+                            <aside class="shipcount">
+                                <div class="shipcount__info">
+                                    <strong></strong>直到免运费
+                                </div>
+                                <div class="shipcount__bg">
+                                    <div class="shipcount__fill shipcount__fill--progress" style="width:100.00%"></div>
+                                </div>
+                            </aside>
+                            <input type="submit" name="checkout" value="进行结算"
+                                   class="cw-btn cw-btn--action cw-btn--full js-gtm-proceed-to-checkout"/>
+                            <p>
+                                小计（1项）:
+                                <span class="price total">
+                                                0元</span>
+                            </p>
+                            <hr>
+                            <p>
+                                统一运费:
+                                <span class="price">
+                                                0元</span>
+                            </p>
+                        </div>
+                    </section>
+                </div>
+            </form>
+        </div>
+    </article>
+</main>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    sum();
+    $(function () {
+        $(".update").each(function () {
+            $(this).click(function () {
+                var num = $(this).prev(".amount").val();
+                var id = $(this).data("id");
+                $.post("/up_num", {"id": id, "num": num}, function (re) {
+
+                    var t = JSON.parse(re);
+                    if (t.code == 1) {
+                        layer.msg(t.msg);
+                        setTimeout(function () {
+                            window.location.reload();
+                        }, 666);
+                    } else if (t.code == 2) {
+                        layer.msg(t.msg);
+                        return;
+                    }
+                });
+            });
+        });
+    });
+
+    function sum() {
+        var c = 0;
+        var b = [];
+        $(".sum:checked").each(function (i) {
+            var total = parseFloat($(this).data("total"));
+            if (total != "") {
+                c += total;
+                b[i] += total;
+            }
+        });
+        if (b.length <= 0) {
+            $(".js-gtm-proceed-to-checkout").attr("disabled", "disabled");
+        } else {
+            $(".js-gtm-proceed-to-checkout").removeAttr("disabled");
+        }
+
+        $(".total").html(c.toFixed(2));
+    }
+
+
+    function cart_del(e) {
+        //alert($(e).text());
+        $.post("/cart_del", {"id": e}, function (dat) {
+            console.log(dat);
+            var t = JSON.parse(dat);
+            if (t.code == 1) {
+                layer.msg(t.msg);
+                setTimeout(function () {
+                    window.location.reload();
+                }, 666);
+            } else if (t.code == 2) {
+                layer.msg(t.msg);
+                return;
+            }
+        });
+    }
+</script>
+</body>
+
+</html>

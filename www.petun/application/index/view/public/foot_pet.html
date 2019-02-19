@@ -1,0 +1,35 @@
+{php}$cate=db("store_links_cate")->field("id,title")->where(["is_deleted"=>0])->select();
+foreach($cate as $k=>$v){
+$goods=db("store_links")->field("id,title,url")->where(["is_deleted"=>0,"cid"=>$v['id']])->select();
+$cate[$k]['goods']=$goods;
+}
+{/php}
+<div class="area links mb-50" id="links">
+    <div class="modBoxA">
+        <div class="tbA">
+            <div class="main">
+                <div class="tab-nav pro-nav">
+                    <div class="control clearfix">
+										<span class="mark">
+                                            {volist name="cate" id="c"}
+<i class="item {eq name='i' value='1'}current{/eq}">{$c.title}</i>
+                                            {/volist}
+</span>
+
+                    </div>
+                    <div class="tab-wrap">
+                        <div class="tab-inner">
+                            {volist name="cate" id="c"}
+                            <div class="pannel">
+                                {volist name="c['goods']" id="cl"}
+                                <a href="{$cl.url}" target="_blank">{$cl.title}</a>
+                                {/volist}
+                            </div>
+                            {/volist}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
